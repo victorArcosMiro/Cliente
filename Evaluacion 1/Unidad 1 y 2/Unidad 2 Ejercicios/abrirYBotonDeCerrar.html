@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventana Emergente</title>
+</head>
+<body>
+  <script>
+    var nuevaVentana = window.open("https://www.amazon.es/", "Publicidad", "height=400, width=600");
+
+    /*nuevaVentana.document.write('<html><head><title>Ventana Emergente</title></head><body>');
+    nuevaVentana.document.write('<iframe src="https://www.amazon.es/" style="width:100%; height:80%"></iframe>');*/
+
+    nuevaVentana.document.write('<input type="button" value="Cerrar" onclick="window.close()">');
+    //nuevaVentana.document.write('</body></html>');
+    
+  </script>
+</body>
+</html>
+
+

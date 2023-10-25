@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let f = new Date(); // Obtiene la fecha actual
+
+    document.write("Hoy es "); // Imprime "Hoy es"
+
+    let diaDeLaSemana = f.getDay(); // Obtiene el día de la semana (0 - Domingo, 1 - Lunes, ..., 6 - Sábado)
+
+    // Utiliza un switch para determinar el día de la semana y lo imprime
+    switch (diaDeLaSemana) {
+      case 1:
+        document.write("lunes ");
+        break;
+      case 2:
+        document.write("martes ");
+        break;
+      case 3:
+        document.write("miércoles ");
+        break;
+      case 4:
+        document.write("jueves ");
+        break;
+      case 5:
+        document.write("viernes ");
+        break;
+      case 6:
+        document.write("sábado ");
+        break;
+      case 0:
+        document.write("domingo ");
+        break;
+      default:
+        document.write("Día no válido");
+    }
+
+    document.write("," + f.getDate() + " "); // Imprime el día del mes
+
+    let numeroDeMes = f.getMonth(); // Obtiene el número de mes (0 - Enero, 1 - Febrero, ..., 11 - Diciembre)
+
+    // Utiliza un switch para determinar el mes y lo imprime
+    switch (numeroDeMes) {
+      case 0:
+        document.write("Enero");
+        break;
+      case 1:
+        document.write("Febrero");
+        break;
+      case 2:
+        document.write("Marzo");
+        break;
+      case 3:
+        document.write("Abril");
+        break;
+      case 4:
+        document.write("Mayo");
+        break;
+      case 5:
+        document.write("Junio");
+        break;
+      case 6:
+        document.write("Julio");
+        break;
+      case 7:
+        document.write("Agosto");
+        break;
+      case 8:
+        document.write("Septiembre");
+        break;
+      case 9:
+        document.write("Octubre");
+        break;
+      case 10:
+        document.write("Noviembre");
+        break;
+      case 11:
+        document.write("Diciembre");
+        break;
+      default:
+        document.write("Mes no válido");
+    }
+
+    // Imprime el año y la hora:minutos
+    document.write(" de " + f.getFullYear() + " y son las " + f.getHours() + ":" + f.getMinutes());
+  </script>
+</body>
+</html>

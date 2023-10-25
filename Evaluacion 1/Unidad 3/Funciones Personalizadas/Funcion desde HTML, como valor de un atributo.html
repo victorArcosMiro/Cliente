@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invocar función desde JavaScript</title>
+</head>
+<body onload="explicacion()">
+  <input type="button" value="Pulsa aquí para saber la fecha actual" onClick="mi_funcion()">
+</body>
+<script>
+
+
+  function mi_funcion() {
+    var fecha = new Date();
+    var fechaString = String(fecha);
+    alert("La fecha actual es: " + fechaString);
+  }
+
+
+  function explicacion() {
+    alert("Pulsa el botón para saber la fecha actual.");
+  }
+
+</script>
+</html>

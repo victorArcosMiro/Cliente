@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function aplicar_IVA(valorProducto, IVA) {
+      var productoConIVA = valorProducto * IVA;
+      alert("El precio del producto, aplicando el IVA del  " + IVA + " es: " + productoConIVA);
+    }
+  </script>
+</head>
+<body>
+  <script>
+    var valorProducto = prompt("Introduce el valor del producto: ");
+    var numValorProducto = parseFloat(valorProducto);
+    var iva = 1.21;
+    aplicar_IVA(valorProducto,iva);
+  </script>
+</body>
+</html>
