@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Manipular palabras</h1>
+  <form action="">
+    <label for="textArea">Escribe palabras: </label><br>
+    <textarea id="textarea" name="textarea" rows="10" cols="50">Write something here</textarea><br>
+
+    <input type="submit" value="Aceptar">
+
+  </form>
+  <script>
+
+    var string = document.getElementById("textarea");
+    var palabras = [];
+    var cont = 0;
+    for(i=0;i<string.length;i++){
+      var palabra = "";
+      if(string.charAt(i) != ' '){
+        palabra += string.charAt(i);
+      }else{
+        cont++;
+        document.write("La "+i+"º palabra es " + palabra);
+      }
+    }
+  </script>
+</body>
+</html>
