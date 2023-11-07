@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    document.write("<h1>Ejercicios Arrays JavaScript - Hoja 3.1</h1>");
+    const vector = [2, -5, 10, -3, 7];
+
+    const printVector = (title, items, transform) => {
+      document.write(`<h2>${title}</h2>`);
+      items.forEach((item, index) => document.write(`Número ${index + 1}: ${transform(item)}<br>`));
+    };
+
+    printVector("Vector con solo números negativos:", vector.filter(item => item > 0), item => item);
+    printVector("Vector con el triple de sus valores:", vector, item => item * 3);
+  </script>
+</body>
+</html>

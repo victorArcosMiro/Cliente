@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones con Array</title>
+</head>
+<body>
+  <script>
+    const miVector = [true, 5, false, "hola", "adios", 2];
+
+    const quintoMayorQueCuarto = miVector[4] > miVector[3];
+    const orPrimerYTercerComponente = miVector[0] || miVector[2];
+    const andPrimerYTercerComponente = miVector[0] && miVector[2];
+    const suma = miVector[1] + miVector[5];
+    const resta = miVector[1] - miVector[5];
+    const multiplicacion = miVector[1] * miVector[5];
+    const division = miVector[1] / miVector[5];
+    const modulo = miVector[1] % miVector[5];
+
+    document.write("<h1>Operaciones con Array</h1>");
+    document.write(`<p>¿El quinto componente es mayor que el cuarto? ${quintoMayorQueCuarto}</p>`);
+    document.write(`<p>OR entre el primer y tercer componente: ${orPrimerYTercerComponente}</p>`);
+    document.write(`<p>AND entre el primer y tercer componente: ${andPrimerYTercerComponente}</p>`);
+    document.write(`<p>Suma entre el segundo y sexto componente: ${suma}</p>`);
+    document.write(`<p>Resta entre el segundo y sexto componente: ${resta}</p>`);
+    document.write(`<p>Multiplicación entre el segundo y sexto componente: ${multiplicacion}</p>`);
+    document.write(`<p>División entre el segundo y sexto componente: ${division}</p>`);
+    document.write(`<p>Módulo entre el segundo y sexto componente: ${modulo}</p>`);
+  </script>
+</body>
+</html>
