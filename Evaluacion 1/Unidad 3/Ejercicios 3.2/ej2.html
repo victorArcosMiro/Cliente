@@ -3,30 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operaciones con Array</title>
+  <title>Arrays y funciones de usuario</title>
+  <script>
+    function ej2(vector){
+      // Arrays para almacenar valores negativos y el triple de valores
+      var vectorNegativos = [];
+      var vectorTriple = [];
+      // Variables para almacenar resultados de multiplicaciones
+      var multiplicacionNegativos = 1;
+      var multiplicacionTriple = 1;
+
+      // Bucle para calcular el triple de cada valor y almacenarlo en "vectorTriple"
+      // También identifica y guarda valores negativos en "vectorNegativos"
+      for(var i = 0; i < vector.length; i++){
+        vectorTriple.push(vector[i] * 3);
+        if(vector[i] < 0){
+          vectorNegativos.push(vector[i]);
+        }
+      }
+
+      // Bucle para calcular la multiplicación de los valores en "vectorTriple"
+      for(var j = 0; j < vectorTriple.length; j++){
+        multiplicacionTriple *= vectorTriple[j];
+      }
+
+      // Bucle para calcular la multiplicación de los valores en "vectorNegativos"
+      for(var k = 0; k < vectorNegativos.length; k++){
+        multiplicacionNegativos *= vectorNegativos[k];
+      }
+
+      // Mostrar resultados
+      document.write("Vector con valores negativos: " + vectorNegativos + "<br>");
+      document.write("Vector con el triple de valor: " + vectorTriple + "<br>");
+      document.write('<p style="color:red";>En el enunciado del ejercicio pone:"- Calcula el resultado de multiplicar todos los valores del nuevo array." pero hay dos nuevos arrays, así que he multiplicado los dos arrays:</p><br>');
+      document.write("Multiplicacion de todos los valores del array con valores negativos: " + multiplicacionNegativos + "<br>");
+      document.write("Multiplicacion de todos los valores del array con el triple de valor: " + multiplicacionTriple + "<br>");
+    }
+  </script>
 </head>
 <body>
+  <!-- Llamada a la función "ej2" alque se le pasa el "vector" -->
   <script>
-    const miVector = [true, 5, false, "hola", "adios", 2];
-
-    const quintoMayorQueCuarto = miVector[4] > miVector[3];
-    const orPrimerYTercerComponente = miVector[0] || miVector[2];
-    const andPrimerYTercerComponente = miVector[0] && miVector[2];
-    const suma = miVector[1] + miVector[5];c
-    const resta = miVector[1] - miVector[5];
-    const multiplicacion = miVector[1] * miVector[5];
-    const division = miVector[1] / miVector[5];
-    const modulo = miVector[1] % miVector[5];
-
-    document.write("<h1>Operaciones con Array</h1>");
-    document.write(`<p>¿El quinto componente es mayor que el cuarto? ${quintoMayorQueCuarto}</p>`);
-    document.write(`<p>OR entre el primer y tercer componente: ${orPrimerYTercerComponente}</p>`);
-    document.write(`<p>AND entre el primer y tercer componente: ${andPrimerYTercerComponente}</p>`);
-    document.write(`<p>Suma entre el segundo y sexto componente: ${suma}</p>`);
-    document.write(`<p>Resta entre el segundo y sexto componente: ${resta}</p>`);
-    document.write(`<p>Multiplicación entre el segundo y sexto componente: ${multiplicacion}</p>`);
-    document.write(`<p>División entre el segundo y sexto componente: ${division}</p>`);
-    document.write(`<p>Módulo entre el segundo y sexto componente: ${modulo}</p>`);
+    var vector = [2, -5, 10, -3, 7];
+    ej2(vector);
   </script>
 </body>
 </html>
