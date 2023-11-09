@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Factorial</title>
+    <script>
+        // Función para calcular el factorial de un número
+        function calcularFactorial(numero) {
+            
+            // Se comprueba si se ha introducido un número y no se ha pulsado "Cancelar"
+                
+                // Parseo la cadena a un número 
+                numero = parseInt(numero);
+
+                // Calculo el factorial con un bucle for
+                var factorial = 1;
+                for (var i = 1; i <= numero; i++) {
+                    factorial *= i;
+                }
+
+                // Muestro el resultado por pantalla
+                document.write("El factorial de " + numero + " es: " + factorial);
+        }
+    </script>
+</head>
+<body>
+    <!-- Función para calcular el factorial -->
+    <script>
+        do{
+        var numero = prompt("Introduce un número para calcular su factorial:");
+        }while(numero !== null && isNaN(numero) && numero!="");
+        calcularFactorial(numero);
+    </script>
+</body>
+</html>
