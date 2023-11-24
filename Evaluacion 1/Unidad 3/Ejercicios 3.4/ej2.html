@@ -7,23 +7,23 @@
 </head>
 <body>
   <script>
-    // Definición de un conjunto de letras correspondientes a los números de DNI.
+    // Defino el conjunto de letras correspondientes a los números de DNI.
     const letrasArray = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "E", "K", "T"];
 
-    // Solicitar al usuario que ingrese su número de DNI y almacenarlo en la variable 'dni'.
+    // Solicito al usuario que ingrese su número de DNI para almacenarlo en la variable 'dni'.
     var dni = prompt("Introduce tu DNI");
 
-    // Extraer los números del DNI eliminando la última letra y almacenarlos en la variable 'numeros'.
+    // Extraigo los números del DNI eliminando la última letra y los almaceno en la variable 'numeros'.
     var numeros = dni.slice(0, -1);
 
-    // Convertir 'numeros' a un número entero utilizando 'parseInt' y almacenarlo en 'dniInt'.
+    // Convierto la variable 'numeros' a un número entero utilizando 'parseInt' y lo almaceno en 'dniInt'.
     var dniInt = parseInt(numeros);
 
-    // Calcular la letra correspondiente al número de DNI utilizando el conjunto de letras y el operador módulo (%).
+    // Calculo la letra correspondiente al número de DNI, busco dentro de 'letrasArray' la posicion correspondiente a la operacion en la cual obtienes el resto de dividir los numeros del dni entre 23.
     var letraCalculada = letrasArray[(dniInt % 23)];
 
-    // Verificar si la letra calculada coincide con la última letra del DNI proporcionada por el usuario.
-    if (letraCalculada === dni[dni.length - 1].toUpperCase()) {
+    // Verifico si la letra calculada coincide con la última letra del DNI introducido por el usuario.
+    if (letraCalculada === dni[dni.length - 1].toUpperCase()) { //Uso 'toUpperCase' por si el usuario introdujese el dni con la letra en minusculas.
       document.write("El DNI es correcto"); // Mensaje si el DNI es correcto.
     } else {
       document.write("El DNI no es correcto"); // Mensaje si el DNI no es correcto.
