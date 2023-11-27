@@ -6,53 +6,39 @@
     <title>Comprobacion mayusculas y minusculas de una cadena</title>
     <script>
         // Función para comprobar si una cadena contiene mayúsculas, minúsculas o ambas
+        function pedirCadena() {
+            do {
+                // Solicita al usuario que introduzca una cadena de texto
+                var cadena = prompt("Introduce una cadena de texto: ");
+
+                // Verifica si la cadena es un número
+                if (!isNaN(cadena)) {
+                    
+                   pedirCadena(); // Vuelve al inicio del bucle
+                }
+                if (cadena == null) {
+                pedirCadena();
+            }
+
+                // Llama a la función de comprobación de mayúsculas y minúsculas
+                comprobarMayusMinus(cadena);
+            } while (cadena.length < 1);
+        }
+
         function comprobarMayusMinus(cadena) {
-            // Variables para verificar la presencia de mayúsculas y minúsculas
-            var mayus = false;
-            var minus = false;
-            // Cadena filtrada sin espacios, números ni símbolos
-            var cadenaNoSpaceNum = "";
-
-            // Bucle para filtrar la cadena y obtener solo letras
-            for (var j = 0; j < cadena.length; j++) {
-                // Verifica si el carácter es una letra y lo agrega a cadenaNoSpaceNum
-                if ((cadena[j] >= "a" && cadena[j] <= "z") || (cadena[j] >= "A" && cadena[j] <= "Z")) {
-                    cadenaNoSpaceNum += cadena[j];
-                }
-            }
-
-            // Bucle para determinar si hay mayúsculas o minúsculas en cadenaNoSpaceNum
-            for (var i = 0; i < cadenaNoSpaceNum.length; i++) {
-                // Verifica si el carácter actual es una mayúscula o minúscula
-                if (cadenaNoSpaceNum[i] === cadenaNoSpaceNum[i].toUpperCase()) {
-                    mayus = true;
-                } else if (cadenaNoSpaceNum[i] === cadenaNoSpaceNum[i].toLowerCase()) {
-                    minus = true;
-                }
-            }
-
-            // Muestra el resultado basado en las mayúsculas y minúsculas encontradas
-            if (mayus && minus) {
-                document.write("La cadena contiene mayúsculas y minúsculas.");
-            } else if (mayus && !minus) {
+            if (cadena === cadena.toUpperCase()) {
                 document.write("La cadena solo contiene mayúsculas.");
-            } else if (!mayus && minus) {
+            } else if (cadena === cadena.toLowerCase()) {
                 document.write("La cadena solo contiene minúsculas.");
             } else {
-                document.write("La cadena no contiene letras.");
+                document.write("La cadena contiene mayúsculas y minúsculas.");
             }
         }
     </script>
 </head>
 <body>
     <script>
-        // Bucle do-while para solicitar al usuario una cadena hasta que se introduzca al menos un carácter
-        do {
-            // Solicita al usuario que introduzca una cadena de texto
-            var cadena = prompt("Introduce una cadena de texto: ");
-            // Llama a la función de comprobación de mayúsculas y minúsculas
-            comprobarMayusMinus(cadena);
-        } while (cadena.length < 1);
+       pedirCadena();
     </script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Validacion de Formulario</title>
+        <style>
+
+            form {
+                margin: 30px;
+                border-color: light-grey;
+                border-width: 1px;
+                width: 500px;
+            }
+            
+            label {
+                display: block;
+                width: 150px;
+                text-align: right;
+                float: left;
+                clear: left;
+                margin-right: 10px;
+            }
+            
+            input {
+                display: block;
+                width: 250px;
+                text-align: left;
+                clear: right;
+            }
+
+        </style>
+        <script>
+            function validacion() {
+                
+                // Expresiones Regulares que vamos a utilizar
+                
+                var val_NumCuenta = /^\d{20}$/; // 20 cifras numéricas.
+                var val_6C = /^\D{6}$/; // Cualquier carácter siempre que no sea numérico y obligatoriamente 6
+                
+                
+                // Recorremos los elementos del formulario.
+
+                for (i=0; i<formulario.elements.length-1; i++) {
+                    
+                    elemento = formulario.elements[i];
+                    
+                    if (elemento.type != "text") // Si el elemento HTML no es de tipo "text" terminaremos la ejecución del bucle.
+                        continue;
+                    
+                    var palabras = elemento.className.split(" "); // Separamos los elementos del array "lista de clases" con un espacio en blanco.
+
+                    for (j=0; j<palabras.length; j++) {	
+                        
+                        switch (palabras[j]) {
+                            case "NumCuenta":
+                                if (!val_NumCuenta.test(elemento.value)) {
+                                    alert("Numero de cuenta no válido.");
+                                    elemento.style.backgroundColor = '#ccc';
+                                    elemento.value = "";
+                                    return false;
+                                }
+                                break;
+
+                            case "6Caracteres":
+                                if (elemento.value.length < 1) { // Si el elemento está vacío.
+                                    alert("El campo de 6 caracteres no debe estar vacío.");
+                                    elemento.style.backgroundColor = 'red';
+                                    elemento.value = "";
+                                    return false;
+                                }else{
+                                    elemento.style.backgroundColor='green'
+                                    
+                                }
+                                if (!val_6C.test(elemento.value)) { // Si el elemento no contiene ningún número.
+                                    alert("El campo 6 caracteres no debe contener ningún número.");
+                                    elemento.style.backgroundColor = 'red';
+                                    elemento.value = "";
+                                    return false;
+                                }else{
+                                    elemento.style.backgroundColor='green'
+                                
+                                }
+                                break;
+
+                            case "AntesRelleno":                                                            //Aqui lo que intento es hacer que si valor de ese elemento es menor o mayor
+                                if (val_6C.test(elemento.value.length < 6 && elemento.value.length > 6)) {  // que 6, entonces el "text" se quede bloqueado, pero ahora mismo no se la
+                                                                                                            // manera de bloquearlo
+                                }
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+            
+            window.onload = function() { // El evento "load" hace referencia a la carga de distintas partes de la página. Este se produce en el objeto "Window" cuando la página se ha cargado por completo.
+                formulario.apellido.focus(); // Se coloca el foco en el campo "apellido" por defecto.
+            }
+        </script>
+    </head>
+    <body>
+        <form name="formulario" action="OK.html" onsubmit="return validacion()">
+
+            Pagina que valida formulario
+            
+            <fieldset>
+                <legend>Formulario</legend>
+                <label>Numero de cuenta:</label>
+                <input type="text" name="NumCuenta" class="NumCuenta" /><br />
+                <label>Seis caracteres:</label>
+                <input type="text" name="6Caracteres" class="6Caracteres" /><br />
+                <label>Antes relleno:</label>
+                <input type="text" name="AntesRelleno" class="AntesRelleno" /><br />
+
+                <input type="submit" value="Enviar" />
+            </fieldset>
+
+        </form>
+    </body>
+</html>

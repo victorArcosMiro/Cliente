@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p {
+            text-align: center;
+            font-family: Arial;
+            font-size: 40px;
+            margin: 0.25cm 0.25cm 0.25cm 0.25cm;
+        }
+        #pantalla{
+            height: 40px;
+        }
+        .c {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            margin: 0.25cm 0.75cm 0.25cm 0.75cm;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div>
+            <table border="2">
+                <tr>
+                    <td colspan="3">
+                        <div class="p" id="pantalla">-</div>
+                    </td>
+                </tr>
+                <tr>
+                    <!--Definir los onclicks=nombre(parametro)-->
+                    <td id="7" onclick="num(7)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">7</div>
+                    </td>
+                    <td id="8" onclick="num(8)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">8</div>
+                    </td>
+                    <td id="9" onclick="num(9)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">9</div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="4" onclick="num(4)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">4</div>
+                    </td>
+                    <td id="5" onclick="num(5)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">5</div>
+                    </td>
+                    <td id="6" onclick="num(6)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">6</div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="1" onclick="num(1)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">
+                            1</div>
+                    </td>
+                    <td id="2" onclick="num(2)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">2</div>
+                    </td>
+                    <td id="3" onclick="num(3)" onmousedown="cambiarColor(this)" onmouseup="quitarColor(this)">
+                        <div class="c">3</div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td id="R" colspan="3" onclick="reiniciar()" onmousedown="cambiarColor(this)"
+                        onmouseup="quitarColor(this)">
+                        <div class="c"> Reiniciar </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <script>
+        //Inicializar variables
+        var numero = 0;
+        var pantalla = document.getElementById("pantalla");
+        let secuencia = []; // variable para almacenar la secuencia de teclas pulsadas
+
+
+        //Funcion para almacenar y reproducir la secuencia
+        function num(numero) {
+
+            //Añadimos los numeros al array
+            secuencia.push(numero)
+
+            //Si el array tiene 3 de longitud se ejecutara la secuencia
+            if (secuencia.length === 3) {
+                //Vacio la pantalla
+                pantalla.innerHTML = "";
+                //Bucle para reproducir la secuencia
+                for (let i = 0; i < secuencia.length; i++) {
+                    //Añadir un tiempo entre boton y boton
+                    setTimeout(function () {
+                        //Se concatenan los numeros
+                        pantalla.innerHTML += secuencia[i];
+                        //Cambiamos el color para hacer que la secuencia sea visible
+                        document.getElementById(secuencia[i]).style.backgroundColor = "lightblue";
+                        if (i > 0) {
+                            //Lo volvemos a dejar en blanco
+                            document.getElementById(secuencia[i - 1]).style.backgroundColor = "white";
+                        }
+                    }, 1000 * i)
+                }
+                //Para cambiar el dondo del ultimo numero a blanco
+                setTimeout(function () {
+                    pantalla.innerHTML = "-";
+                    document.getElementById(secuencia[secuencia.length - 1]).style.backgroundColor = "white";
+                    secuencia = [];
+                }, 3000);
+
+            } else {
+
+                let pantalla = document.getElementById("pantalla");
+                pantalla.innerHTML = "";
+                for (let i = 0; i < secuencia.length; i++) {
+                    pantalla.innerHTML += secuencia[i];
+                }
+            }
+        }
+
+        //Funcion para reiniciar
+        function reiniciar() {
+            //Ponemos las variables a 0
+            pantalla.innerHTML = "-";
+            secuencia = [];
+            restaurarColores();
+        }
+
+        //Funcion para restaurar el color si se da a reiniciar antes de que acabe la secuencia
+        function restaurarColores() {
+            for (let i = 1; i <= 9; i++) {
+                document.getElementById(i.toString()).style.backgroundColor = "white";
+            }
+        }
+
+        //Funcion para cambiar el color cuando se hace click
+        function cambiarColor(valor) {
+            valor.style.backgroundColor = "purple";
+        }
+
+        //Funcion para que cambie a blanco cuando se deja de hacer click
+        function quitarColor(valor) {
+            valor.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+
+</html>

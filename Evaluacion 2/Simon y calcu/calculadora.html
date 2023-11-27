@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p{
+            text-align: right;
+            font-family: Arial;
+            font-size: 40px;
+            margin: 0.25cm 0.25cm 0.25cm 0.25cm;
+        }
+        .c{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            margin: 0.25cm 0.75cm 0.25cm 0.75cm;
+        }
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+     <form>
+        <div>
+            <table border="2">
+                <tr>
+                    <td colspan="5"><div class="p" id="pantalla">0</div></td>
+                </tr>
+                <tr>
+                    <!--Definir los onclicks=nombre(parametro)-->
+                    <td id="7"><div class="c" onclick="num(7)" onmousedown="cambiarColor('7')" onmouseup="restaurarColor('7')">7</div></td>
+                    <td id="8"><div class="c" onclick="num(8)" onmousedown="cambiarColor('8')" onmouseup="restaurarColor('8')">8</div></td>
+                    <td id="9"><div class="c" onclick="num(9)" onmousedown="cambiarColor('9')" onmouseup="restaurarColor('9')">9</div></td>
+                    <td id="/"><div class="c" onclick="operacion('/')" onmousedown="cambiarColor('/')" onmouseup="restaurarColor('/')">/</div></td>
+                    <td id="C"><div class="c" onclick="limpiar()" onmousedown="cambiarColor('C')" onmouseup="restaurarColor('C')">C</div></td>
+                </tr>
+                <tr>
+                    <td id="4"><div class="c" onclick="num(4)" onmousedown="cambiarColor('4')" onmouseup="restaurarColor('4')">4</div></td>
+                    <td id="5"><div class="c" onclick="num(5)" onmousedown="cambiarColor('5')" onmouseup="restaurarColor('5')">5</div></td>
+                    <td id="6"><div class="c" onclick="num(6)" onmousedown="cambiarColor('6')" onmouseup="restaurarColor('6')">6</div></td>
+                    <td id="x"><div class="c" onclick="operacion('*')" onmousedown="cambiarColor('x')" onmouseup="restaurarColor('x')">x</div></td>
+                    <td id="=" rowspan="3"><div class="c" onclick="calcular(7)" onmousedown="cambiarColor('=')" onmouseup="restaurarColor('=')"> = </div></td> 
+                </tr>
+                <tr>
+                    <td id="1"><div class="c" onclick="num(1)" onmousedown="cambiarColor('1')" onmouseup="restaurarColor('1')">1</div></td>
+                    <td id="2"><div class="c" onclick="num(2)" onmousedown="cambiarColor('2')" onmouseup="restaurarColor('2')">2</div></td>
+                    <td id="3"><div class="c" onclick="num(3)" onmousedown="cambiarColor('3')" onmouseup="restaurarColor('3')">3</div></td>
+                    <td id="-"><div class="c" onclick="operacion('-')" onmousedown="cambiarColor('-')" onmouseup="restaurarColor('-')">-</div></td>
+                </tr>
+                <tr>
+                    <td id="0" colspan="3"><div class="c" onclick="num(0)" onmousedown="cambiarColor('0')" onmouseup="restaurarColor('0')">0</div></td>
+                    <td id="+"><div class="c" onclick="operacion('+')" onmousedown="cambiarColor('+')" onmouseup="restaurarColor('+')"> + </div></td>
+                </tr>
+            </table>
+        </div>
+     </form>
+     <script>
+        //variables
+        var numero=0;
+        var pantalla=document.getElementById("pantalla");
+        var operador='';
+
+        //Funcion para que si se introduce por primera vez un número sustituya al 0 y si ya hay un número escrito lo concatene
+        function num(numero) {
+            if(pantalla.innerHTML === '0'){
+                pantalla.innerHTML= numero;
+            }else{
+                pantalla.innerHTML += numero;
+            }
+        }
+        /*function num(numero) {
+            pantalla.innerHTML = (pantalla.innerHTML === '0') ? numero : pantalla.innerHTML + numero;
+        }*/
+        //Función para las operaciones
+        function operacion(op){
+            //transformar la cadena en un float y guardarla en numero
+            numero = parseFloat(pantalla.innerHTML);
+            //guardar el op en operador
+            operador = op; 
+            //después del operador volver a coger el número
+            pantalla.innerHTML= '0';
+        }
+        
+        //Funcion para calcular
+        function calcular(){
+            var resultado;
+            switch(operador){
+                case '+':
+                    resultado= numero + parseFloat(pantalla.innerHTML);
+                    break;
+                case '-':
+                    resultado= numero - parseFloat(pantalla.innerHTML);
+                    break;
+                case '/':
+                    resultado= numero / parseFloat(pantalla.innerHTML);
+                    break;
+                case '*':
+                    resultado= numero * parseFloat(pantalla.innerHTML);
+                    break;
+                default:
+                    resultado=0;
+            }
+            pantalla.innerHTML=resultado.toString();
+        }
+
+        //Función para borrar la calculadora
+        function limpiar(){
+            pantalla.innerHTML='0';
+            numero=0;
+            operador='';
+        }
+
+        function cambiarColor(id) {
+            var elemento = document.getElementById(id);
+            elemento.style.backgroundColor = "grey"; // Cambiar a cualquier otro color
+        }
+        function restaurarColor(id) {
+            var elemento = document.getElementById(id);
+            elemento.style.backgroundColor = ""; // Cambiar a cualquier otro color
+        }
+     </script>
+</body>
+</html>

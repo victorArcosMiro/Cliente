@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+<meta charset="UTF-8">
+<title>Examen 2ª Evaluación Ejercicio calculadora</title>
+
+<style>
+    .c{
+        text-align: center;
+        font-family: "Arial";
+        font-size: 40px;
+        margin: 0.25cm 0.75cm 0.25cm 0.75cm;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <form>
+        <div>
+            <table border="2">
+                <tr>
+                    <td colspan="5"> <div class="c" id="secuencia"> _ </div> </td>                   
+                </tr>
+                <tr>
+                    <td id="1"  onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 1 </div> </td>
+                    <td id="2"  onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 2 </div> </td>
+                    <td id="3"  onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 3 </div> </td>
+                </tr>
+                <tr>
+                    <td id="4" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 4 </div> </td>
+                    <td id="5" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 5 </div> </td>
+                    <td id="6" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 6 </div> </td>
+                </tr>
+                <tr>
+                    <td id="1" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 7 </div> </td>
+                    <td id="2" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 8 </div> </td>
+                    <td id="3" onclick="return guardarValor(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c"> 9 </div> </td>
+                </tr>
+                <tr>
+                    <td colspan="5" onclick="reiniciar(this)" onmousedown="colorear(this)" onmouseup="descolorear(this)"> <div class="c" id="R"> Reiniciar </div> </td>                   
+                </tr>
+            </table>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+    
+
+        let valores = []
+        let cont = 0
+        let bloq = false
+        var pantalla = document.getElementById('secuencia')
+        let activar = true
+        
+
+        function guardarValor(valor){
+            
+            if(activar){
+
+                //incremento los valores
+                cont++ 
+
+                //Muestro por pantalla
+                if(cont<=3){
+                    if(pantalla.innerHTML == ' _ '){
+                        pantalla.innerHTML = valor.textContent
+                    }else{
+                        pantalla.innerHTML += valor.textContent
+                    }
+                }
+
+                // Añado los valores al array
+                valores.push(valor)
+
+                // Si llego a 3 valores se inicia la secuencia
+                if (cont == 3){
+                    activar = false
+                    secuencia()
+                    cont=0
+                }
+
+            }
+            
+        }
+
+
+        function secuencia(){
+
+            //Temporizadores que colorean los botones
+
+            setTimeout(function(){               
+                valores[0].style.backgroundColor = "orange"
+            },100)
+            setTimeout(function(){               
+                valores[1].style.backgroundColor = "orange"
+                valores[0].style.backgroundColor = ""
+            },300)
+            setTimeout(function(){               
+                valores[2].style.backgroundColor = "orange"
+                valores[1].style.backgroundColor = ""
+            },600)
+            setTimeout(function(){               
+                valores[2].style.backgroundColor = ""
+                valores = []
+            },900)      
+        
+        }
+    
+       function reiniciar(elem){
+            pantalla.innerHTML= " _ "
+            activar = true
+       }
+        
+
+       function colorear(valor) {
+        valor.style.backgroundColor='orange'
+       }
+       function descolorear(valor) {
+        valor.style.backgroundColor=''
+       }
+        
+    
+    </script>
+
+</body>
+
+
+</html>
