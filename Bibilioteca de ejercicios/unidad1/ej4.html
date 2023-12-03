@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio JavaScript</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Abre una ventana con las propiedades iniciales
+    var ventanaNueva = window.open('', 'NombreVentana', 'width=250,height=150,top=100,left=100');
+
+    // Mueve la ventana a la posición (400, 100)
+    ventanaNueva.moveTo(400, 100);
+
+    // Función para mover la ventana 19 veces cada 100 milisegundos
+    function moverVentana() {
+      ventanaNueva.moveBy(5, 5); // Mover 5 píxeles a la derecha y 5 píxeles hacia abajo
+    }
+
+    // Llamar a la función para mover la ventana 19 veces cada 100 ms
+    var contador = 0;
+    var intervalo = setInterval(function() {
+      if (contador < 19) {
+        moverVentana();
+        contador++;
+      } else {
+        clearInterval(intervalo); // Detener el intervalo después de 19 movimientos
+        ventanaNueva.close(); // Cerrar la ventana
+      }
+    }, 100);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio JavaScript</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Abre una ventana con las propiedades iniciales
+    var ventanaNueva = window.open('', 'NombreVentana', 'width=250,height=150,top=100,left=100');
+
+    // Mueve la ventana a la posición (400, 100)
+    ventanaNueva.moveTo(400, 100);
+
+    // Función para mover la ventana 19 veces cada 100 milisegundos
+    function moverVentana() {
+      ventanaNueva.moveBy(5, 5); // Mover 5 píxeles a la derecha y 5 píxeles hacia abajo
+    }
+
+    // Llamar a la función para mover la ventana 19 veces cada 100 ms
+    var contador = 0;
+    var intervalo = setInterval(function() {
+      if (contador < 19) {
+        moverVentana();
+        contador++;
+      } else {
+        clearInterval(intervalo); // Detener el intervalo después de 19 movimientos
+        ventanaNueva.close(); // Cerrar la ventana
+      }
+    }, 100);
+  </script>
+</body>
+</html>

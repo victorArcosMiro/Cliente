@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobacion mayusculas y minusculas de una cadena</title>
+    <script>
+        // Función para comprobar si una cadena contiene mayúsculas, minúsculas o ambas
+        function pedirCadena() {
+            do {
+                // Solicita al usuario que introduzca una cadena de texto
+                var cadena = prompt("Introduce una cadena de texto: ");
+
+                // Verifica si la cadena es un número
+                if (!isNaN(cadena)) {
+                    
+                   pedirCadena(); // Vuelve al inicio del bucle
+                }
+                if (cadena == null) {
+                pedirCadena();
+            }
+
+                // Llama a la función de comprobación de mayúsculas y minúsculas
+                comprobarMayusMinus(cadena);
+            } while (cadena.length < 1);
+        }
+
+        function comprobarMayusMinus(cadena) {
+            if (cadena === cadena.toUpperCase()) {
+                document.write("La cadena solo contiene mayúsculas.");
+            } else if (cadena === cadena.toLowerCase()) {
+                document.write("La cadena solo contiene minúsculas.");
+            } else {
+                document.write("La cadena contiene mayúsculas y minúsculas.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+       pedirCadena();
+    </script>
+</body>
+</html>

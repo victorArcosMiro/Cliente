@@ -21,38 +21,27 @@
       var textarea = document.getElementById("textarea");
       var input = textarea.value;
       var arrayPalabras = input.split(" ");
-      var arrayPalabrasFinal = [];
 
-      for (var i = 0; i < arrayPalabras.length; i++) {
-        if (arrayPalabras[i] !== "") {
-          arrayPalabrasFinal.push(arrayPalabras[i]);
-        }
-      }
-
-      if (arrayPalabrasFinal.length > 0) {
+      if (arrayPalabras.length > 0) {
         // La primera palabra
-        var primeraPalabra = arrayPalabrasFinal[0];
+        var primeraPalabra = arrayPalabras[0];
 
         // La última palabra
-        var ultimaPalabra = arrayPalabrasFinal[arrayPalabrasFinal.length - 1];
+        var ultimaPalabra = arrayPalabras[arrayPalabras.length - 1];
 
         // Número de palabras
-        var numeroPalabras = arrayPalabrasFinal.length;
+        var numeroPalabras = arrayPalabras.length;
 
         // Palabras ordenadas alfabéticamente
-        var palabrasOrdenadas = arrayPalabrasFinal.slice().sort().join(", ");
+        var palabrasOrdenadas = arrayPalabras.slice().sort().join(", ");
 
         // Abrir una nueva ventana para mostrar los resultados
-
         var nuevaVentana = window.open("", "Resultados", "width=400,height=300");
         nuevaVentana.document.write("<h2>Resultados:</h2>");
         nuevaVentana.document.write("La primera palabra es: " + primeraPalabra + "<br>");
         nuevaVentana.document.write("La última palabra es: " + ultimaPalabra + "<br>");
         nuevaVentana.document.write("Número de palabras: " + numeroPalabras + "<br>");
         nuevaVentana.document.write("Palabras ordenadas alfabéticamente: " + palabrasOrdenadas + "<br>");
-      }else{
-        var nuevaVentana = window.open("", "Resultados", "width=400,height=300");
-        nuevaVentana.document.write("No has escrito ninguna palabra :(");
       }
     }
   </script>

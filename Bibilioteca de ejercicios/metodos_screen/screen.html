@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Metodos Screen</h1>
+  <script>
+     // Atributos del objeto Screen
+  document.write("Ancho de la pantalla: " + screen.width + " píxeles<br>");
+  document.write("Altura de la pantalla: " + screen.height + " píxeles<br>");
+  document.write("Ancho disponible para ventanas: " + screen.availWidth + " píxeles<br>");
+  document.write("Altura disponible para ventanas: " + screen.availHeight + " píxeles<br>");
+
+  // Métodos del objeto Screen
+  screen.orientation.lock("portrait-primary");
+  document.write("Orientación de la pantalla bloqueada en portrait-primary<br>");
+
+  screen.orientation.unlock();
+  document.write("Orientación de la pantalla desbloqueada<br>");
+
+  document.write("Tipo de orientación de la pantalla: " + screen.orientation.type + "<br>");
+  </script>
+</body>
+</html>

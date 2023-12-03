@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Metodos String</h1>
+  <script>
+    // Métodos de la Clase String
+    document.write("<p><b>String.length</b><br>Devuelve la longitud de una cadena de texto.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".length + "</p>");
+
+    document.write("<p><b>String.charAt()</b><br>Devuelve el carácter en la posición especificada de una cadena.</p>");
+    document.write("<p>Ejemplo: " + "Hola".charAt(1) + "</p>");
+
+    document.write("<p><b>String.charCodeAt()</b><br>Devuelve el valor Unicode del carácter en la posición especificada.</p>");
+    document.write("<p>Ejemplo: " + "Hola".charCodeAt(1) + "</p>");
+
+    document.write("<p><b>String.concat()</b><br>Combina dos o más cadenas de texto y devuelve una nueva cadena.</p>");
+    document.write("<p>Ejemplo: " + "Hola, ".concat("mundo") + "</p>");
+
+    document.write("<p><b>String.indexOf()</b><br>Devuelve la posición de la primera aparición de una subcadena en una cadena.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".indexOf("mundo") + "</p>");
+
+    document.write("<p><b>String.lastIndexOf()</b><br>Devuelve la posición de la última aparición de una subcadena en una cadena.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".lastIndexOf("o") + "</p>");
+
+    document.write("<p><b>String.slice()</b><br>Extrae una parte de una cadena y la devuelve como una nueva cadena.</p>");
+    document.write("<p>Ejemplo: " + "JavaScript".slice(0, 4) + "</p>");
+
+    document.write("<p><b>String.substring()</b><br>Similar a slice, pero no admite índices negativos.</p>");
+    document.write("<p>Ejemplo: " + "JavaScript".substring(4, 10) + "</p>");
+
+    document.write("<p><b>String.substr()</b><br>Extrae una cantidad específica de caracteres a partir de una posición.</p>");
+    document.write("<p>Ejemplo: " + "JavaScript".substr(4, 6) + "</p>");
+
+    document.write("<p><b>String.replace()</b><br>Reemplaza una subcadena con otra en una cadena.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".replace("mundo", "amigo") + "</p>");
+
+    document.write("<p><b>String.toLowerCase()</b><br>Convierte una cadena a minúsculas.</p>");
+    document.write("<p>Ejemplo: " + "Hola, Mundo".toLowerCase() + "</p>");
+
+    document.write("<p><b>String.toUpperCase()</b><br>Convierte una cadena a mayúsculas.</p>");
+    document.write("<p>Ejemplo: " + "Hola, Mundo".toUpperCase() + "</p>");
+
+    document.write("<p><b>String.trim()</b><br>Elimina espacios en blanco al principio y al final de una cadena.</p>");
+    document.write("<p>Ejemplo: " + " Hola, mundo ".trim() + "</p>");
+
+    document.write("<p><b>String.split()</b><br>Divide una cadena en un array de subcadenas basado en un delimitador.</p>");
+    document.write("<p>Ejemplo: " + "Manzana,Plátano,Uva".split(",") + "</p>");
+
+    document.write("<p><b>String.startsWith()</b><br>Verifica si una cadena comienza con una subcadena específica.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".startsWith("Hola") + "</p>");
+
+    document.write("<p><b>String.endsWith()</b><br>Verifica si una cadena termina con una subcadena específica.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".endsWith("mundo") + "</p>");
+
+    document.write("<p><b>String.includes()</b><br>Verifica si una cadena contiene una subcadena específica.</p>");
+    document.write("<p>Ejemplo: " + "Hola, mundo".includes("mundo") + "</p>");
+  </script>
+</body>
+</html>

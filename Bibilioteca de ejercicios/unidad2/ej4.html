@@ -11,8 +11,8 @@
     document.bgColor = "gray";
     document.fgColor = "white";
     // Obtiene el ancho y alto de la pantalla
-    const ancho = window.screen.width;
-    const alto = window.screen.height;
+    const ancho = window.screen.availHeight;
+    const alto = window.screen.availHeight;
 
     // Calcula la diagonal de la pantalla
     const diagonal = Math.sqrt(ancho * ancho + alto * alto);

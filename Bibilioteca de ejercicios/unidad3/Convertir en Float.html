@@ -7,11 +7,9 @@
 </head>
 <body>
   <script>
-    var array = [
-      "4", "21", "30", "100000"
-    ]
-    array.sort(function(a, b){return b - a});
-    document.write(array);
-  </script>
+    var input = prompt("Introduce un valor: ");
+    var inputParsed = parseFloat(input);
+    alert("parseFloat("+input+"): " + inputParsed);
+    </script>
 </body>
 </html>

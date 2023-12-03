@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Metodos Arrays</h1>
+  <script>
+    // Métodos de la Clase Array
+    document.write("<p><b>Array.length</b><br>Propiedad que devuelve la cantidad de elementos en un array.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; console.log(miArray.length); // 3</p>");
+
+    document.write("<p><b>Array.push()</b><br>Añade uno o más elementos al final de un array y devuelve la nueva longitud.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; miArray.push(4); // miArray ahora es [1, 2, 3, 4]</p>");
+
+    document.write("<p><b>Array.pop()</b><br>Elimina el último elemento de un array y lo devuelve.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; const elementoEliminado = miArray.pop(); // elementoEliminado es 3</p>");
+
+    document.write("<p><b>Array.unshift()</b><br>Añade uno o más elementos al principio de un array y devuelve la nueva longitud.</p>");
+    document.write("<p>Ejemplo: const miArray = [2, 3]; miArray.unshift(1); // miArray ahora es [1, 2, 3]</p>");
+
+    document.write("<p><b>Array.shift()</b><br>Elimina el primer elemento de un array y lo devuelve.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; const elementoEliminado = miArray.shift(); // elementoEliminado es 1</p>");
+
+    document.write("<p><b>Array.concat()</b><br>Combina dos o más arrays y devuelve un nuevo array resultante.</p>");
+    document.write("<p>Ejemplo: const array1 = [1, 2]; const array2 = [3, 4]; const newArray = array1.concat(array2); // newArray es [1, 2, 3, 4]</p>");
+
+    document.write("<p><b>Array.join()</b><br>Combina todos los elementos de un array en una cadena, separados por un separador.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; const cadena = miArray.join(', '); // cadena es '1, 2, 3'</p>");
+
+    document.write("<p><b>Array.slice()</b><br>Extrae una parte de un array y la devuelve como un nuevo array.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3, 4]; const subArray = miArray.slice(1, 3); // subArray es [2, 3]</p>");
+
+    document.write("<p><b>Array.splice()</b><br>Cambia el contenido de un array eliminando, reemplazando o agregando elementos.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3, 4]; miArray.splice(1, 2, 5, 6); // miArray ahora es [1, 5, 6, 4]</p>");
+
+    document.write("<p><b>Array.indexOf()</b><br>Devuelve el primer índice en el que se encuentra un elemento en el array, o -1 si no se encuentra.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; const indice = miArray.indexOf(2); // indice es 1</p>");
+
+    document.write("<p><b>Array.lastIndexOf()</b><br>Devuelve el último índice en el que se encuentra un elemento en el array, o -1 si no se encuentra.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3, 2]; const indice = miArray.lastIndexOf(2); // indice es 3</p>");
+
+    document.write("<p><b>Array.includes()</b><br>Comprueba si un array contiene un elemento determinado y devuelve `true` o `false`.</p>");
+    document.write("<p>Ejemplo: const miArray = [1, 2, 3]; const incluyeDos = miArray.includes(2); // incluyeDos es true</p>");
+  </script>
+</body>
+</html>

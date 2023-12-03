@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo del Factorial</title>
+    <script>
+        // Función para calcular el factorial de un número
+        function calcularFactorial() {
+            do {
+                // Solicita al usuario que introduzca un número
+                var numero = prompt("Introduce un número para calcular su factorial: ");
+
+                // Verifica si se ha introducido un número y no se ha cancelado
+                if (numero === null) {
+                    calcularFactorial();
+                }
+
+                // Convierte la entrada a un número
+                numero = parseFloat(numero);
+
+                // Verifica si la conversión fue correta y es un número
+                if (isNaN(numero)) {
+                    calcularFactorial(); // Vuelve a pedirlo si en el caso contrario
+                }
+
+                // Llama a la función de cálculo del factorial
+                var resultado = factorial(numero);
+
+                // Muestra el resultado
+                alert("El factorial de " + numero + " es: " + resultado);
+
+            } while (isNaN(numero) || numero === null);
+        }
+
+        // Función para calcular el factorial de un número
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+       calcularFactorial();
+    </script>
+</body>
+</html>

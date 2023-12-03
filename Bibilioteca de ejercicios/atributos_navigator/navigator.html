@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// Atributos del objeto Navigator
+document.write("<p><b>navigator.userAgent</b><br>Devuelve una cadena que contiene información sobre el agente de usuario del navegador.</p>");
+  document.write("<p>Ejemplo: navigator.userAgent;</p>");
+
+  document.write("<p><b>navigator.platform</b><br>Devuelve una cadena que indica la plataforma del sistema en la que se ejecuta el navegador.</p>");
+  document.write("<p>Ejemplo: navigator.platform;</p>");
+
+  // Métodos del objeto Navigator
+  document.write("<p><b>navigator.geolocation</b><br>Proporciona acceso a la ubicación geográfica del usuario.</p>");
+  document.write("<p>Ejemplo (para obtener la ubicación actual del usuario):</p>");
+  document.write("<pre><code> navigator.geolocation.getCurrentPosition(function(position) {</code></pre>");
+  document.write("<pre><code>   const latitud = position.coords.latitude;</code></pre>");
+  document.write("<pre><code>   const longitud = position.coords.longitude;</code></pre>");
+  document.write("<pre><code>   alert(`Latitud: ${latitud}, Longitud: ${longitud}`);</code></pre>");
+  document.write("<pre><code> });</code></pre>");
+
+  document.write("<p><b>navigator.language</b><br>Devuelve una cadena que representa el idioma preferido del usuario.</p>");
+  document.write("<p>Ejemplo: navigator.language;</p>");
+
+  document.write("<p><b>navigator.cookieEnabled</b><br>Indica si las cookies están habilitadas en el navegador.</p>");
+  document.write("<p>Ejemplo: navigator.cookieEnabled;</p>");
+
+  document.write("<p><b>navigator.onLine</b><br>Indica si el navegador está en línea (conexión a Internet activa) o fuera de línea.</p>");
+  document.write("<p>Ejemplo: navigator.onLine;</p>");
+
+  document.write("<p><b>navigator.userAgentData</b><br>Proporciona información detallada sobre la configuración del agente de usuario.</p>");
+  document.write("<p>Ejemplo: navigator.userAgentData;</p>");
+  </script>
+</body>
+</html>

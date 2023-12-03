@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays y funciones de usuario</title>
+  <script>
+    function ej2(vector){
+      // Arrays para almacenar valores negativos y el triple de valores
+      var vectorNegativos = [];
+      var vectorTriple = [];
+      // Variables para almacenar resultados de multiplicaciones
+      var multiplicacionNegativos = 1;
+      var multiplicacionTriple = 1;
+
+      // Bucle para calcular el triple de cada valor y almacenarlo en "vectorTriple"
+      // También identifica y guarda valores negativos en "vectorNegativos"
+      for(var i = 0; i < vector.length; i++){
+        vectorTriple.push(vector[i] * 3);
+        if(vector[i] < 0){
+          vectorNegativos.push(vector[i]);
+        }
+      }
+
+      // Bucle para calcular la multiplicación de los valores en "vectorTriple"
+      for(var j = 0; j < vectorTriple.length; j++){
+        multiplicacionTriple *= vectorTriple[j];
+      }
+
+      // Bucle para calcular la multiplicación de los valores en "vectorNegativos"
+      for(var k = 0; k < vectorNegativos.length; k++){
+        multiplicacionNegativos *= vectorNegativos[k];
+      }
+
+      // Mostrar resultados
+      document.write("Vector con valores negativos: " + vectorNegativos + "<br>");
+      document.write("Vector con el triple de valor: " + vectorTriple + "<br>");
+      document.write('<p style="color:red";>En el enunciado del ejercicio pone:"- Calcula el resultado de multiplicar todos los valores del nuevo array." pero hay dos nuevos arrays, así que he multiplicado los dos arrays:</p><br>');
+      document.write("Multiplicacion de todos los valores del array con valores negativos: " + multiplicacionNegativos + "<br>");
+      document.write("Multiplicacion de todos los valores del array con el triple de valor: " + multiplicacionTriple + "<br>");
+    }
+  </script>
+</head>
+<body>
+  <!-- Llamada a la función "ej2" alque se le pasa el "vector" -->
+  <script>
+    var vector = [2, -5, 10, -3, 7];
+    ej2(vector);
+  </script>
+</body>
+</html>

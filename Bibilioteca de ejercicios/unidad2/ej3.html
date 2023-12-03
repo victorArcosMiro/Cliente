@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación de DNI</title>
+</head>
+<body>
+  <script>
+    // Definición de un conjunto de letras correspondientes a los números de DNI.
+    var letras = "TRWAGMYFPDXBNJZSQVHLCKET";
+
+    // Solicitar al usuario que ingrese su número de DNI y almacenarlo en la variable 'dni'.
+    var dni = prompt("Introduce tu DNI");
+
+    // Convertir la letra del DNI introducida por el usuario a mayúsculas para evitar distinción entre mayúsculas y minúsculas.
+    dni = dni.toUpperCase();
+
+    // Extraer los números del DNI eliminando la última letra y almacenarlos en la variable 'numeros'.
+    var numeros = dni.substring(0, dni.length - 1);
+
+    // Convertir 'numeros' a un número entero utilizando 'parseInt' y almacenarlo en 'dniInt'.
+    var dniInt = parseInt(numeros);
+
+    // Calcular la letra correspondiente al número de DNI utilizando el conjunto de letras y el operador módulo (%).
+    var letraCalculada = letras.charAt(dniInt % 23);
+
+    // Verificar si la letra calculada coincide con la última letra del DNI proporcionada por el usuario.
+    if (letraCalculada === dni.charAt(dni.length - 1)) {
+      document.write("El DNI es correcto"); // Mensaje si el DNI es correcto.
+    } else {
+      document.write("El DNI no es correcto"); // Mensaje si el DNI no es correcto.
+    }
+
+  </script>
+</body>
+</html>

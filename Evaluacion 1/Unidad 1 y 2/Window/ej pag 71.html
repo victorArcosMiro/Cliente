@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*Abre una ventana de altura 150
+    píxeles y anchura 250 situada a 100 a la
+    derecha y 100 abajo respecto de la esquina
+    superior izquierda de la ventana principal*/
+    var ventana = window.open('https://www.google.com', 'NombreDeVentana', 'height=150, width=250, top=100, left=100');
+
+    /*Después, muévela a 400 a la derecha y 100
+    abajo respecto de la esquina superior izquierda.*/
+    ventana.moveTo(400, 100);
+
+    /*Luego, cada 100 milisegundos, muévela 19
+    veces a 5 píxeles a la derecha y 5 abajo
+    respecto de la posición anterior.*/
+    function moverVentana() {
+    ventana.moveBy(5, 5);
+    }
+    // Mueve la ventana cada 100 milisegundos, 19 veces
+    for (var i = 0; i < 19; i++) {
+      ventana.moveBy(5, 5);
+        setTimeout(1000);
+    }
+
+    ventana.close();
+  </script>
+</body>
+</html>
