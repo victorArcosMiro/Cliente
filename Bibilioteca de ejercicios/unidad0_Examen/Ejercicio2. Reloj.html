@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        // Variables reloj y frecuencia para actualizar los segundos
+        var reloj = 0;
+
+        // Funcion para mostrar la fecha y la hora
+        function actualizarReloj() {
+            // Variables de fecha y hora
+            var ahora = new Date();
+            // Variables para guardar el nombre del dia y del mes
+            var dia, mes;
+
+            // Calcular día con un switch
+            switch (ahora.getDay()) {
+                case 0:
+                    dia = "domingo";
+                    break;
+                case 1:
+                    dia = "lunes";
+                    break;
+                case 2:
+                    dia = "martes";
+                    break;
+                case 3:
+                    dia = "miercoles";
+                    break;
+                case 4:
+                    dia = "jueves";
+                    break;
+                case 5:
+                    dia = "viernes";
+                    break;
+                case 6:
+                    dia = "sabado";
+                    break;
+            }
+
+            // Calcular mes con un switch
+            switch (ahora.getMonth()) {
+                case 0:
+                    mes = "Enero";
+                    break;
+                case 1:
+                    mes = "Febrero";
+                    break;
+                case 2:
+                    mes = "Marzo";
+                    break;
+                case 3:
+                    mes = "Abril";
+                    break;
+                case 4:
+                    mes = "Mayo";
+                    break;
+                case 5:
+                    mes = "Junio";
+                    break;
+                case 6:
+                    mes = "Julio";
+                    break;
+                case 7:
+                    mes = "Agosto";
+                    break;
+                case 8:
+                    mes = "Septiembre";
+                    break;
+                case 9:
+                    mes = "Octubre";
+                    break;
+                case 10:
+                    mes = "Noviembre";
+                    break;
+                case 11:
+                    mes = "Diciembre";
+                    break;
+            }
+
+            // Variable para almacenar la fecha
+            var fecha = dia + ", " + ahora.getDate() + " " + mes + " " + ahora.getFullYear();
+
+            var ahora = new Date();
+            var horas = ahora.getHours();
+            var minutos = ahora.getMinutes();
+            var segundos = ahora.getSeconds();
+
+            // Añadir un cero delante de los números menores que 10
+            horas = horas < 10 ? "0" + horas : horas;
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+
+            // Mostrar la hora en el formato HH:MM:SS
+            var horaActual = horas + ":" + minutos + ":" + segundos;
+
+            // Variable que almacena el texto
+            var mostrarHora = 'HORA ACTUAL: <br>' + horaActual + "<br>" + 'FECHA ACTUAL <br>' + fecha;
+
+            // Limpiar el documento y escribir la nueva hora
+            document.open();
+            document.write(mostrarHora);
+            document.close();
+
+            // Llamar a la función nuevamente después de un segundo
+            reloj = setTimeout(actualizarReloj, 1000);
+        }
+
+    </script>
+</head>
+<body onLoad="actualizarReloj()">
+</body>
+</html>

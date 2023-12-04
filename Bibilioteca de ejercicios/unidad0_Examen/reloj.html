@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj con JavaScript (sin DOM)</title>
+
+</head>
+<body>
+
+<!-- Contenedor para mostrar la hora -->
+<div id="reloj"></div>
+
+<script>
+    // Función para obtener la hora actual y actualizar el reloj cada segundo
+    function actualizarReloj() {
+        var ahora = new Date();
+        var horas = ahora.getHours();
+        var minutos = ahora.getMinutes();
+        var segundos = ahora.getSeconds();
+
+        // Añadir un cero delante de los números menores que 10
+        horas = horas < 10 ? "0" + horas : horas;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+
+        // Mostrar la hora en el formato HH:MM:SS
+        var horaActual = horas + ":" + minutos + ":" + segundos;
+
+        // Limpiar el documento y escribir la nueva hora
+        document.open();
+        document.write('<div id="reloj" style="font-size: 2em; margin-top: 100px;margin-left: 100px;">' + horaActual + '</div>');
+
+        // Llamar a la función nuevamente después de un segundo
+        setTimeout(actualizarReloj, 1000);
+    }
+
+    // Llamar a la función para iniciar el reloj
+    actualizarReloj();
+</script>
+
+</body>
+</html>

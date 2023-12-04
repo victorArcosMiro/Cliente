@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p>isFinite(): Verifica(devuelve true o false) si el número que se pasa como argumento es o no un número finito.</p>
+
+  <p>Código para visualización:</p>
+  <code>
+    <span class="variable">var</span> n1 = <span class="keyword">prompt</span>("Introduce un numero: ");
+
+    <span class="keyword">if</span> (<span class="keyword">isFinite</span>(n1)) {
+      <span class="comment">// Instrucciones si el argumento es un número finito.</span>
+      <span class="keyword">alert</span>("Es un numero finito");
+    } <span class="keyword">else</span> {
+      <span class="comment">// Instrucciones si el argumento no es un número finito.</span>
+      <span class="keyword">alert</span>("No es un numero finito");
+    }
+  </code>
+
+  <script>
+    var n1 = prompt("Introduce un numero: ");
+
+    if (isFinite(n1)) {
+      // Instrucciones si el argumento es un número finito.
+      alert("Es un numero finito");
+    } else {
+      // Instrucciones si el argumento no es un número finito.
+      alert("No es un numero finito");
+    }
+  </script>
+</body>
+</html>

@@ -4,106 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../funciones_predefinidas/style.css">
 </head>
 <body>
   <h1>Metodos Document</h1>
   <script>
   // Métodos adicionales del objeto Document
-  document.write("<strong>1. document.getElementById():</strong> Devuelve una referencia al primer elemento con el valor del atributo 'id' especificado.<br>");
-  document.write('Ejemplo: <code>const elemento = document.getElementById("miId");</code><br><br>');
+   // CODIGO COMPLETO
+   document.write("<span class='comment'>// CODIGO COMPLETO</span><br>");
+    document.write("<span class='variable'>var</span> date = <span class='keyword'>new</span> Date();<br>");
 
-  document.write("<strong>2. document.getElementsByTagName():</strong> Devuelve una colección de elementos con el nombre de la etiqueta HTML especificada.<br>");
-  document.write('Ejemplo: <code>const elementos = document.getElementsByTagName("p");</code><br><br>');
+    // getElementById()
+    document.write("<p><strong>1. document.getElementById():</strong> Devuelve una referencia al primer elemento con el valor del atributo 'id' especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elemento = <span class='keyword'>document.getElementById</span>(\"miId\");</span></code><br><br></p>");
 
-  document.write("<strong>3. document.getElementsByClassName():</strong> Devuelve una colección de elementos con la clase CSS especificada.<br>");
-  document.write('Ejemplo: <code>const elementos = document.getElementsByClassName("miClase");</code><br><br>');
+    // getElementsByTagName()
+    document.write("<p><strong>2. document.getElementsByTagName():</strong> Devuelve una colección de elementos con el nombre de la etiqueta HTML especificada.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.getElementsByTagName</span>(\"p\");</span></code><br><br></p>");
 
-  document.write("<strong>4. document.querySelector():</strong> Devuelve el primer elemento que coincida con el selector CSS especificado.<br>");
-  document.write('Ejemplo: <code>const elemento = document.querySelector("#miId .miClase");</code><br><br>');
+    // getElementsByClassName()
+    document.write("<p><strong>3. document.getElementsByClassName():</strong> Devuelve una colección de elementos con la clase CSS especificada.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.getElementsByClassName</span>(\"miClase\");</span></code><br><br></p>");
 
-  document.write("<strong>5. document.querySelectorAll():</strong> Devuelve todos los elementos que coincidan con el selector CSS especificado en una colección.<br>");
-  document.write('Ejemplo: <code>const elementos = document.querySelectorAll("p.miclase");</code><br><br>');
+    // querySelector()
+    document.write("<p><strong>4. document.querySelector():</strong> Devuelve el primer elemento que coincida con el selector CSS especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elemento = <span class='keyword'>document.querySelector</span>(\"#miId .miClase\");</span></code><br><br></p>");
 
-  document.write("<strong>6. document.createElement():</strong> Crea un nuevo elemento HTML con el nombre de etiqueta especificado.<br>");
-  document.write('Ejemplo: <code>const nuevoElemento = document.createElement("div");</code><br><br>');
+    // querySelectorAll()
+    document.write("<p><strong>5. document.querySelectorAll():</strong> Devuelve todos los elementos que coincidan con el selector CSS especificado en una colección.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.querySelectorAll</span>(\"p.miclase\");</span></code><br><br></p>");
 
-  document.write("<strong>7. document.createTextNode():</strong> Crea un nuevo nodo de texto con el contenido de texto especificado.<br>");
-  document.write('Ejemplo: <code>const texto = document.createTextNode("Hola, mundo");</code><br><br>');
+    // createElement()
+    document.write("<p><strong>6. document.createElement():</strong> Crea un nuevo elemento HTML con el nombre de etiqueta especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> nuevoElemento = <span class='keyword'>document.createElement</span>(\"div\");</span></code><br><br></p>");
 
-  document.write("<strong>8. document.appendChild():</strong> Agrega un nodo al final de la lista de hijos de un elemento.<br>");
-  document.write('Ejemplo: <code>padre.appendChild(hijo);</code><br><br>');
+    // createTextNode()
+    document.write("<p><strong>7. document.createTextNode():</strong> Crea un nuevo nodo de texto con el contenido de texto especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> texto = <span class='keyword'>document.createTextNode</span>(\"Hola, mundo\");</span></code><br><br></p>");
 
-  document.write("<strong>9. document.removeChild():</strong> Elimina un nodo hijo de un elemento.<br>");
-  document.write('Ejemplo: <code>padre.removeChild(hijo);</code><br><br>');
+    // appendChild()
+    document.write("<p><strong>8. document.appendChild():</strong> Agrega un nodo al final de la lista de hijos de un elemento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>padre.appendChild</span>(hijo);</span></code><br><br></p>");
 
-  document.write("<strong>10. document.addEventListener():</strong> Registra un controlador de eventos en el elemento para escuchar eventos específicos.<br>");
-  document.write('Ejemplo: <code>elemento.addEventListener("click", miFuncion);</code><br><br>');
+    // removeChild()
+    document.write("<p><strong>9. document.removeChild():</strong> Elimina un nodo hijo de un elemento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>padre.removeChild</span>(hijo);</span></code><br><br></p>");
+
+    // addEventListener()
+    document.write("<p><strong>10. document.addEventListener():</strong> Registra un controlador de eventos en el elemento para escuchar eventos específicos.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>elemento.addEventListener</span>(\"click\", <span class='variable'>miFuncion</span>);</span></code><br><br></p>");
   </script>
   <h1>Propiedades Document</h1>
   <script>
     // Propiedades y Métodos adicionales del objeto Document
-    document.write("<strong>1. document.title:</strong> Devuelve o establece el título del documento.<br>");
-    document.write('Ejemplo: <code>const titulo = document.title;</code><br><br>');
+ // document.title
+ document.write("<p><strong>1. document.title:</strong> Devuelve o establece el título del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> titulo = <span class='keyword'>document.title;</span></code><br><br></p>");
 
-    document.write("<strong>2. document.URL:</strong> Devuelve la URL completa del documento.<br>");
-    document.write('Ejemplo: <code>const url = document.URL;</code><br><br>');
+    // document.URL
+    document.write("<p><strong>2. document.URL:</strong> Devuelve la URL completa del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> url = <span class='keyword'>document.URL;</span></code><br><br></p>");
 
-    document.write("<strong>3. document.domain:</strong> Devuelve o establece el dominio del documento.<br>");
-    document.write('Ejemplo: <code>const dominio = document.domain;</code><br><br>');
+    // document.domain
+    document.write("<p><strong>3. document.domain:</strong> Devuelve o establece el dominio del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> dominio = <span class='keyword'>document.domain;</span></code><br><br></p>");
 
-    document.write("<strong>4. document.referrer:</strong> Devuelve la URL del documento que llevó al usuario al documento actual.<br>");
-    document.write('Ejemplo: <code>const referencia = document.referrer;</code><br><br>');
+    // document.referrer
+    document.write("<p><strong>4. document.referrer:</strong> Devuelve la URL del documento que llevó al usuario al documento actual.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> referencia = <span class='keyword'>document.referrer;</span></code><br><br></p>");
 
-    document.write("<strong>5. document.lastModified:</strong> Devuelve la fecha de la última modificación del documento.<br>");
-    document.write('Ejemplo: <code>const modificacion = document.lastModified;</code><br><br>');
+    // document.lastModified
+    document.write("<p><strong>5. document.lastModified:</strong> Devuelve la fecha de la última modificación del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> modificacion = <span class='keyword'>document.lastModified;</span></code><br><br></p>");
 
-    document.write("<strong>6. document.characterSet:</strong> Devuelve la codificación de caracteres utilizada en el documento.<br>");
-    document.write('Ejemplo: <code>const codificacion = document.characterSet;</code><br><br>');
+    // document.characterSet
+    document.write("<p><strong>6. document.characterSet:</strong> Devuelve la codificación de caracteres utilizada en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> codificacion = <span class='keyword'>document.characterSet;</span></code><br><br></p>");
 
-    document.write('<strong>7. document.documentElement:</strong> Devuelve el elemento raíz (normalmente `<html>`) del documento.<br>');
-  document.write('Ejemplo: <code>const raiz = document.documentElement;</code><br><br>');
+    // document.documentElement
+    document.write("<p><strong>7. document.documentElement:</strong> Devuelve el elemento raíz (normalmente `<html>`) del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> raiz = <span class='keyword'>document.documentElement;</span></code><br><br></p>");
 
-  document.write('<strong>8. document.body:</strong> Devuelve el elemento `<body>` del documento.<br>');
-  document.write('Ejemplo: <code>const cuerpo = document.body;</code><br><br>');
+    // document.body
+    document.write("<p><strong>8. document.body:</strong> Devuelve el elemento `<body>` del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> cuerpo = <span class='keyword'>document.body;</span></code><br><br></p>");
 
-  document.write('<strong>9. document.head:</strong> Devuelve el elemento `<head>` del documento.<br>');
-  document.write('Ejemplo: <code>const cabeza = document.head;</code><br><br>');
+    // document.head
+    document.write("<p><strong>9. document.head:</strong> Devuelve el elemento `<head>` del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> cabeza = <span class='keyword'>document.head;</span></code><br><br></p>");
 
-  document.write('<strong>10. document.images:</strong> Devuelve una colección de todos los elementos `<img>` en el documento.<br>');
-  document.write('Ejemplo: <code>const imagenes = document.images;</code><br><br>');
+    // document.images
+    document.write("<p><strong>10. document.images:</strong> Devuelve una colección de todos los elementos `<img>` en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> imagenes = <span class='keyword'>document.images;</span></code><br><br></p>");
 
-  document.write('<strong>11. document.links:</strong> Devuelve una colección de todos los elementos `<a>` en el documento.<br>');
-  document.write('Ejemplo: <code>const enlaces = document.links;</code><br><br>');
+    // document.links
+    document.write("<p><strong>11. document.links:</strong> Devuelve una colección de todos los elementos `<a>` en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> enlaces = <span class='keyword'>document.links;</span></code><br><br></p>");
 
-  document.write('<strong>12. document.forms:</strong> Devuelve una colección de todos los elementos `<form>` en el documento.<br>');
-  document.write('Ejemplo: <code>const formularios = document.forms;</code><br><br>');
+    // document.forms
+    document.write("<p><strong>12. document.forms:</strong> Devuelve una colección de todos los elementos `<form>` en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> formularios = <span class='keyword'>document.forms;</span></code><br><br></p>");
 
-  document.write('<strong>13. document.scripts:</strong> Devuelve una colección de todos los elementos `<script>` en el documento.<br>');
-  document.write('Ejemplo: <code>const scripts = document.scripts;</code><br><br>');
+    // document.scripts
+    document.write("<p><strong>13. document.scripts:</strong> Devuelve una colección de todos los elementos `<script>` en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> scripts = <span class='keyword'>document.scripts;</span></code><br><br></p>");
 
-  document.write('<strong>14. document.styleSheets:</strong> Devuelve una colección de hojas de estilo CSS en el documento.<br>');
-  document.write('Ejemplo: <code>const hojasDeEstilo = document.styleSheets;</code><br><br>');
+    // document.styleSheets
+    document.write("<p><strong>14. document.styleSheets:</strong> Devuelve una colección de hojas de estilo CSS en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> hojasDeEstilo = <span class='keyword'>document.styleSheets;</span></code><br><br></p>");
 
-  document.write('<strong>15. document.activeElement:</strong> Devuelve el elemento actualmente enfocado en el documento.<br>');
-  document.write('Ejemplo: <code>const enfocado = document.activeElement;</code><br><br>');
+    // document.activeElement
+    document.write("<p><strong>15. document.activeElement:</strong> Devuelve el elemento actualmente enfocado en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> enfocado = <span class='keyword'>document.activeElement;</span></code><br><br></p>");
 
-  document.write('<strong>16. document.designMode:</strong> Establece o devuelve si el documento es editable (\'on\' para editable, \'off\' para no editable).<br>');
-  document.write('Ejemplo: <code>const modoEdicion = document.designMode;</code><br><br>');
+    // document.designMode
+    document.write("<p><strong>16. document.designMode:</strong> Establece o devuelve si el documento es editable ('on' para editable, 'off' para no editable).<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> modoEdicion = <span class='keyword'>document.designMode;</span></code><br><br></p>");
 
-  document.write('<strong>17. document.cookie:</strong> Establece o devuelve las cookies asociadas con el documento.<br>');
-  document.write('Ejemplo: <code>const cookies = document.cookie;</code><br><br>');
+    // document.cookie
+    document.write("<p><strong>17. document.cookie:</strong> Establece o devuelve las cookies asociadas con el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> cookies = <span class='keyword'>document.cookie;</span></code><br><br></p>");
 
-  document.write('<strong>18. document.defaultView:</strong> Devuelve la vista por defecto asociada con el documento.<br>');
-  document.write('Ejemplo: <code>const vista = document.defaultView;</code><br><br>');
+    // document.defaultView
+    document.write("<p><strong>18. document.defaultView:</strong> Devuelve la vista por defecto asociada con el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> vista = <span class='keyword'>document.defaultView;</span></code><br><br></p>");
 
-  document.write('<strong>19. document.location:</strong> Devuelve un objeto `Location` que proporciona información sobre la URL del documento.<br>');
-  document.write('Ejemplo: <code>const ubicacion = document.location;</code><br><br>');
+    // document.location
+    document.write("<p><strong>19. document.location:</strong> Devuelve un objeto `Location` que proporciona información sobre la URL del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> ubicacion = <span class='keyword'>document.location;</span></code><br><br></p>");
 
-  document.write('<strong>20. document.readyState:</strong> Devuelve el estado de carga del documento (complete cuando está completamente cargado).<br>');
-  document.write('Ejemplo: <code>const estadoCarga = document.readyState;</code><br><br>');
+    // document.readyState
+    document.write("<p><strong>20. document.readyState:</strong> Devuelve el estado de carga del documento (complete cuando está completamente cargado).<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> estadoCarga = <span class='keyword'>document.readyState;</span></code><br><br></p>");
 
-  document.write('<strong>21. document.charset:</strong> Obtiene o establece la codificación de caracteres del documento.<br>');
-  document.write('Ejemplo: <code>const codificacion = document.charset;</code><br><br>');
+    // document.charset
+    document.write("<p><strong>21. document.charset:</strong> Obtiene o establece la codificación de caracteres del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> codificacion = <span class='keyword'>document.charset;</span></code><br><br></p>");
   </script>
 </body>
 </html>
