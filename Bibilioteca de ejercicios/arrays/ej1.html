@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*Crea un objeto Array con los días laborables de la semana (Lunes a Viernes) y utiliza un método del objeto para recorrer el array y convertir cada elemento de ese array a mayúsculas*/
+    var arrayDias = ["Lunes", "Marters","Miercoles","Jueves","Viernes","Sabado", "Domingo"];
+    var arrayDiasToUpper = [];
+    for(var i = 0; i < arrayDias.length;i++){
+      arrayDiasToUpper.push(arrayDias[i].toUpperCase());
+    }
+    for(var j = 0; j < arrayDiasToUpper.length;j++){
+      document.write(arrayDiasToUpper[j] + "<br>");
+    }
+    console.table(arrayDiasToUpper);
+  </script>
+</body>
+</html>

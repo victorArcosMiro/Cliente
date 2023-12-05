@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*Crea un array bidimensional para almacenar nombre y calificación de un grupo de asistentes a un curso. Una vez creado rellenalo con al menos 4 elementos y luego ordénalos por orden menor a mayor.*/
+    var notas = new Array(4);
+    notas = [
+      ['Juan', 5],
+      ['Luisa', 7],
+      ['Ana', 4],
+      ['Pedro', 3]
+    ];
+    notas.sort( function(v1, v2){return v1[1]<v2[1]?-1:1});
+    document.write(notas);
+  </script>
+</body>
+</html>
