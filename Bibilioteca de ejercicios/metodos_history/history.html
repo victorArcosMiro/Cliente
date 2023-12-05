@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../funciones_predefinidas/style.css">
+
+</head>
+<body>
+  <h2>Metodos Objeto History</h2>
+  <script>
+    // history.back()
+    document.write("<p><strong>1. history.back():</strong> Navega hacia atrás en el historial del navegador.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>history.back</span>();</span></code><br><br></p>");
+
+    // history.forward()
+    document.write("<p><strong>2. history.forward():</strong> Navega hacia adelante en el historial del navegador.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>history.forward</span>();</span></code><br><br></p>");
+
+    // history.go()
+    document.write("<p><strong>3. history.go():</strong> Navega a una entrada específica en el historial del navegador.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>history.go</span>(-2);</span></code><br><br></p>");
+document.write("<h2>Propiedades Objeto History</h2>");
+    // Propiedades del objeto history
+    document.write("<p><strong>4. history.current:</strong> Devuelve el objeto State actual.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> estadoActual = <span class='keyword'>history.current</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>5. history.length:</strong> Número de entradas en el historial del navegador.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> numeroEntradas = <span class='keyword'>history.length</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>6. history.next:</strong> Devuelve el siguiente objeto State en el historial.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> siguienteEstado = <span class='keyword'>history.next</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>7. history.previous:</strong> Devuelve el objeto State anterior en el historial.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> estadoAnterior = <span class='keyword'>history.previous</span>;</span></code><br><br></p>");
+
+  </script>
+</body>
+</html>
