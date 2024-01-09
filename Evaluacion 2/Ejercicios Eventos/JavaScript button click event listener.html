@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+// CODIGO COMPLETO
+
+// Espera a que el DOM se cargue completamente antes de ejecutar el código
+document.addEventListener('DOMContentLoaded', () => {
+  // Create a button element
+  const button = document.createElement('button');
+  button.textContent = 'Click me';
+
+  // Add click event listener to the button
+  button.addEventListener('click', () => {
+    console.log('Button clicked!');
+  });
+
+  // Append the button to the document body
+  document.body.appendChild(button);
+});
+
+
+  </script>
+</body>
+</html>

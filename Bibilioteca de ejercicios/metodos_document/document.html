@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../funciones_predefinidas/style.css">
+</head>
+<body>
+  <h1>Metodos Document</h1>
+  <script>
+  // Métodos adicionales del objeto Document
+  document.write("<h2>Si los hemos dado...</h2>")
+      // document.captureEvents()
+      document.write("<p><strong>1. document.captureEvents():</strong> Captura eventos específicos en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.captureEvents</span>(Event.CLICK);</span></code><br><br></p>");
+
+    // document.open()
+    document.write("<p><strong>2. document.open():</strong> Abre un nuevo documento o limpia el contenido de un documento existente.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.open</span>();</span></code><br><br></p>");
+
+    // document.close()
+    document.write("<p><strong>3. document.close():</strong> Cierra el documento actual, después de ser abierto con <code>document.open()</code>.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.close</span>();</span></code><br><br></p>");
+
+    // document.releaseEvents()
+    document.write("<p><strong>4. document.releaseEvents():</strong> Libera la captura de eventos específicos en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.releaseEvents</span>(Event.CLICK);</span></code><br><br></p>");
+
+    // document.getSelection()
+    document.write("<p><strong>5. document.getSelection():</strong> Devuelve el objeto de selección que representa el texto seleccionado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> seleccion = <span class='keyword'>document.getSelection</span>();</span></code><br><br></p>");
+
+    // document.routeEvents()
+    document.write("<p><strong>6. document.routeEvents():</strong> Rutea eventos específicos al documento para su manejo.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.routeEvents</span>(Event.CLICK);</span></code><br><br></p>");
+
+    // document.handleEvent()
+    document.write("<p><strong>7. document.handleEvent():</strong> Maneja eventos específicos en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.handleEvent</span>(Event.CLICK, function(event) { /* código */ });</span></code><br><br></p>");
+
+    // document.write()
+    document.write("<p><strong>8. document.write():</strong> Escribe contenido en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.write</span>(\"¡Hola, mundo!\");</span></code><br><br></p>");
+
+    // document.home()
+    document.write("<p><strong>9. document.home():</strong> Navega a la página de inicio del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.home</span>();</span></code><br><br></p>");
+
+    // document.writeln()
+    document.write("<p><strong>10. document.writeln():</strong> Escribe una línea de contenido en el documento, con salto de línea al final.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='keyword'>document.writeln</span>(\"¡Hola, mundo!\");</span></code><br><br></p>");
+    document.write("<h2>No los hemos dado...</h2>")
+    // getElementById()
+    document.write("<p><strong>1. document.getElementById():</strong> Devuelve una referencia al primer elemento con el valor del atributo 'id' especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elemento = <span class='keyword'>document.getElementById</span>(\"miId\");</span></code><br><br></p>");
+
+    // getElementsByTagName()
+    document.write("<p><strong>2. document.getElementsByTagName():</strong> Devuelve una colección de elementos con el nombre de la etiqueta HTML especificada.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.getElementsByTagName</span>(\"p\");</span></code><br><br></p>");
+
+    // getElementsByClassName()
+    document.write("<p><strong>3. document.getElementsByClassName():</strong> Devuelve una colección de elementos con la clase CSS especificada.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.getElementsByClassName</span>(\"miClase\");</span></code><br><br></p>");
+
+    // querySelector()
+    document.write("<p><strong>4. document.querySelector():</strong> Devuelve el primer elemento que coincida con el selector CSS especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elemento = <span class='keyword'>document.querySelector</span>(\"#miId .miClase\");</span></code><br><br></p>");
+
+    // querySelectorAll()
+    document.write("<p><strong>5. document.querySelectorAll():</strong> Devuelve todos los elementos que coincidan con el selector CSS especificado en una colección.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementos = <span class='keyword'>document.querySelectorAll</span>(\"p.miclase\");</span></code><br><br></p>");
+
+    // createElement()
+    document.write("<p><strong>6. document.createElement():</strong> Crea un nuevo elemento HTML con el nombre de etiqueta especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> nuevoElemento = <span class='keyword'>document.createElement</span>(\"div\");</span></code><br><br></p>");
+
+    // createTextNode()
+    document.write("<p><strong>7. document.createTextNode():</strong> Crea un nuevo nodo de texto con el contenido de texto especificado.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> texto = <span class='keyword'>document.createTextNode</span>(\"Hola, mundo\");</span></code><br><br></p>");
+
+    // appendChild()
+    document.write("<p><strong>8. document.appendChild():</strong> Agrega un nodo al final de la lista de hijos de un elemento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>padre.appendChild</span>(hijo);</span></code><br><br></p>");
+
+    // removeChild()
+    document.write("<p><strong>9. document.removeChild():</strong> Elimina un nodo hijo de un elemento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>padre.removeChild</span>(hijo);</span></code><br><br></p>");
+
+    // addEventListener()
+    document.write("<p><strong>10. document.addEventListener():</strong> Registra un controlador de eventos en el elemento para escuchar eventos específicos.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>elemento.addEventListener</span>(\"click\", <span class='variable'>miFuncion</span>);</span></code><br><br></p>");
+  </script>
+  <h1>Propiedades Document</h1>
+  <script>
+    // Propiedades y Métodos adicionales del objeto Document
+ // document.title
+ document.write("<p><strong>11. document.alinkColor:</strong> Color de enlace activo en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> colorEnlaceActivo = <span class='keyword'>document.alinkColor</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>12. document.fgColor:</strong> Color de primer plano (texto) en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> colorTexto = <span class='keyword'>document.fgColor</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>13. document.plugins:</strong> Colección de complementos (plugins) disponibles en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> complementos = <span class='keyword'>document.plugins</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>14. document.anchors:</strong> Colección de elementos de anclaje en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementosAnclaje = <span class='keyword'>document.anchors</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>15. document.forms:</strong> Colección de formularios en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> formularios = <span class='keyword'>document.forms</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>16. document.referrer:</strong> URL del documento que hizo referencia al documento actual.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> urlReferencia = <span class='keyword'>document.referrer</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>17. document.applets:</strong> Colección de applets en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> applets = <span class='keyword'>document.applets</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>18. document.images:</strong> Colección de imágenes en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> imagenes = <span class='keyword'>document.images</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>19. document.title:</strong> Título del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> tituloDocumento = <span class='keyword'>document.title</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>20. document.bgColor:</strong> Color de fondo del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> colorFondo = <span class='keyword'>document.bgColor</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>21. document.lastModified:</strong> Fecha de la última modificación del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> ultimaModificacion = <span class='keyword'>document.lastModified</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>22. document.URL:</strong> URL del documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> urlDocumento = <span class='keyword'>document.URL</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>23. document.cookie:</strong> Cookies asociadas al documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> cookies = <span class='keyword'>document.cookie</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>24. document.layers:</strong> Capas en el documento (obsoleto en HTML5).<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> capas = <span class='keyword'>document.layers</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>25. document.vlinkColor:</strong> Color de enlace visitado en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> colorEnlaceVisitado = <span class='keyword'>document.vlinkColor</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>26. document.domain:</strong> Dominio del servidor que sirvió el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> dominio = <span class='keyword'>document.domain</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>27. document.linkColor:</strong> Color de enlace no visitado en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> colorEnlaceNoVisitado = <span class='keyword'>document.linkColor</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>28. document.embeds:</strong> Colección de elementos embed (incrustados) en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> elementosEmbed = <span class='keyword'>document.embeds</span>;</span></code><br><br></p>");
+
+    document.write("<p><strong>29. document.links:</strong> Colección de enlaces en el documento.<br></p>");
+    document.write("<p>Ejemplo: <code class='code'><span class='variable'>const</span> enlaces = <span class='keyword'>document.links</span>;</span></code><br><br></p>");
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Metodos Number</h1>
+
+  <script>
+    // Number.isNaN()
+    document.write("<p><b>Number.isNaN()</b><br>Verifica si un valor es NaN (No es un número).</p>");
+    document.write("<p>Ejemplo: ¿Es 5 NaN? " + Number.isNaN(5) + "</p>");
+
+    // Number.parseFloat()
+    document.write("<p><b>Number.parseFloat()</b><br>Convierte una cadena en un número de punto flotante.</p>");
+    document.write("<p>Ejemplo: Convertir '3.14' a número de punto flotante: " + Number.parseFloat("3.14") + "</p>");
+
+    // Number.parseInt()
+    document.write("<p><b>Number.parseInt()</b><br>Convierte una cadena en un número entero.</p>");
+    document.write("<p>Ejemplo: Convertir '42' a número entero: " + Number.parseInt("42") + "</p>");
+
+    // Number.isFinite()
+    document.write("<p><b>Number.isFinite()</b><br>Verifica si un valor es un número finito (no es NaN ni infinito).</p>");
+    document.write("<p>Ejemplo: ¿Es 7 un número finito? " + Number.isFinite(7) + "</p>");
+
+    // Number.isInteger()
+    document.write("<p><b>Number.isInteger()</b><br>Verifica si un valor es un número entero.</p>");
+    document.write("<p>Ejemplo: ¿Es 3.0 un número entero? " + Number.isInteger(3.0) + "</p>");
+
+    // Number.isSafeInteger()
+    document.write("<p><b>Number.isSafeInteger()</b><br>Verifica si un valor es un número entero seguro (dentro del rango seguro de representación).</p>");
+    document.write("<p>Ejemplo: ¿Es 9007199254740991 un número entero seguro? " + Number.isSafeInteger(9007199254740991) + "</p>");
+
+    // Number.MIN_SAFE_INTEGER
+    document.write("<p><b>Number.MIN_SAFE_INTEGER</b><br>Devuelve el valor mínimo de un número entero seguro.</p>");
+    document.write("<p>Ejemplo: Valor mínimo de un número entero seguro: " + Number.MIN_SAFE_INTEGER + "</p>");
+
+    // Number.MAX_SAFE_INTEGER
+    document.write("<p><b>Number.MAX_SAFE_INTEGER</b><br>Devuelve el valor máximo de un número entero seguro.</p>");
+    document.write("<p>Ejemplo: Valor máximo de un número entero seguro: " + Number.MAX_SAFE_INTEGER + "</p>");
+
+    // Number.MAX_VALUE
+    document.write("<p><b>Number.MAX_VALUE</b><br>Devuelve el número más grande representable en JavaScript.</p>");
+    document.write("<p>Ejemplo: Número más grande representable en JavaScript: " + Number.MAX_VALUE + "</p>");
+
+    // Number.MIN_VALUE
+    document.write("<p><b>Number.MIN_VALUE</b><br>Devuelve el número positivo más pequeño (mayor que cero) representable en JavaScript.</p>");
+    document.write("<p>Ejemplo: Número positivo más pequeño representable en JavaScript: " + Number.MIN_VALUE + "</p>");
+
+     // Number.NaN
+  document.write("<p><b>Number.NaN</b><br>Representa el valor NaN (No es un número).</p>");
+  document.write("<p>Ejemplo: Valor NaN: " + Number.NaN + "</p>");
+
+  // Number.POSITIVE_INFINITY
+  document.write("<p><b>Number.POSITIVE_INFINITY</b><br>Representa el infinito positivo.</p>");
+  document.write("<p>Ejemplo: Infinito positivo: " + Number.POSITIVE_INFINITY + "</p>");
+
+  // Number.NEGATIVE_INFINITY
+  document.write("<p><b>Number.NEGATIVE_INFINITY</b><br>Representa el infinito negativo.</p>");
+  document.write("<p>Ejemplo: Infinito negativo: " + Number.NEGATIVE_INFINITY + "</p>");
+
+  // Number.toExponential()
+  document.write("<p><b>Number.toExponential()</b><br>Convierte un número en una cadena en notación exponencial.</p>");
+  document.write("<p>Ejemplo: Notación exponencial de 1234 con 2 decimales: " + (1234).toExponential(2) + "</p>");
+
+  // Number.toFixed()
+  document.write("<p><b>Number.toFixed()</b><br>Formatea un número con un número fijo de decimales.</p>");
+  document.write("<p>Ejemplo: Formatear 3.14159 con 2 decimales: " + (3.14159).toFixed(2) + "</p>");
+
+  // Number.toPrecision()
+  document.write("<p><b>Number.toPrecision()</b><br>Formatea un número con una longitud de dígitos total.</p>");
+  document.write("<p>Ejemplo: Formatear 1234.5678 con precisión de 4 dígitos: " + (1234.5678).toPrecision(4) + "</p>");
+
+  // Number.toString()
+  document.write("<p><b>Number.toString()</b><br>Convierte un número en una cadena con una base específica (decimal por defecto).</p>");
+  document.write("<p>Ejemplo: Representar el número 10 en binario: " + (10).toString(2) + "</p>");
+  </script>
+</body>
+</html>

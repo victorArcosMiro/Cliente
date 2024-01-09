@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <p>escape() / unescape(): Crea una nueva cadena en los que ciertos caracteres se sustituyen por una secuencia hexadecimal de escape y así se pueda usar en cualquier red compatible con caracteres ASCII (en desuso).</p>
+
+  <p>Código para visualización:</p>
+  <code>
+    <span class="variable">var</span> input = <span class="keyword">prompt</span>("Introduce una cadena");
+    <span class="variable">var</span> inputCodificado = <span class="keyword">escape</span>(input);
+    <span class="keyword">alert</span>("Cadena codificada: " + inputCodificado);
+  </code>
+
+  <script>
+    var input = prompt("Introduce una cadena");
+    var inputCodificado = escape(input);
+    alert("Cadena codificada: " + inputCodificado);
+  </script>
+</body>
+</html>

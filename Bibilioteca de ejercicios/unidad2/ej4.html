@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    document.title = "Varios objetos predefinidos de JS";
+    document.bgColor = "gray";
+    document.fgColor = "white";
+    // Obtiene el ancho y alto de la pantalla
+    const ancho = window.screen.availHeight;
+    const alto = window.screen.availHeight;
+
+    // Calcula la diagonal de la pantalla
+    const diagonal = Math.sqrt(ancho * ancho + alto * alto);
+
+    // Redondea la diagonal y la convierte en una cadena
+    const diagonalEnPixeles = diagonal.toFixed(1);
+
+    // Imprime la diagonal de la pantalla en pixeles
+    document.write("<p>La diagonal de la pantalla mide " + diagonalEnPixeles + " pixeles</p>");
+  </script>
+</body>
+</html>

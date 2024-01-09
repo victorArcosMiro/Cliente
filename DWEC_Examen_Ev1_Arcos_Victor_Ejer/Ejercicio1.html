@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ <script>
+//Funciones de usuario
+  function nRandom(){
+    var nRandom = Math.floor(Math.random() * (80)) + 20;
+      return nRandom;
+  }
+
+  function introducirNumero(numero, array){
+    array.push(numero);
+  }
+//Arrays
+  var arrayNumeros = [];
+  var arraFinal = [];
+  var quincePrimeros = [];
+  var impar = [];
+  var char = "IMPAR";
+  //Genero los numeros de forma aleatoria entre 20 y 100
+  for(var i=0; i<1000;i++){
+    introducirNumero(nRandom(), arrayNumeros);
+  }
+  //Si es divisible entre 2 o 3 lo meto en el array
+  for(var j = 0; j<arrayNumeros.length; j++){
+    if(arrayNumeros[j]%2==0 || arrayNumeros[j]%3==0){
+      arraFinal.push(arrayNumeros[j]);
+    }
+  }
+  //En el quicePrimero meto los 15 numero primeros del arrayNumeros
+  for(var k = 0; k<=15; k++){
+    quincePrimeros.push(arraFinal[k]);
+  }
+  //hago el join para el formato requerido e imprimo
+  var cadena = quincePrimeros.join("~");
+  document.write(cadena);
+  //En el array 'impar' si es impar meto el char="IMPAR" si no lo es meto el valor numeérico
+  for(var l = 0; l<quincePrimeros.length; l++){
+    if(quincePrimeros[l]%2!=0){
+      impar.push(char);
+    }else{
+      impar.push(quincePrimeros[l]);
+    }
+  }
+  document.write("<br>")
+  //hago el join para impar
+  var cadenaImpar = impar.join("~");
+  //imprimo la cadena
+document.write(cadenaImpar);
+ </script>
+</body>
+</html>
