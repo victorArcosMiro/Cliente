@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function validaNombre() {
+      valor = document.getElementById("nombre").value;
+      if (valor == null || valor.length == 0 && isNaN(valor)) {
+        alert("El campo no puede ser vacío");
+        return false;
+      }
+      return true;
+    }
+    function validaNumero() {
+      valor = document.getElementById("telefono").value;
+      if (isNaN(valor)) {
+        alert("El campo tiene que ser numérico");
+        return false;
+      }
+      return true;
+    }
+    function validaFecha() {
+      var dia = document.getElementById("dia").value; // Corregido el id del campo día
+      var mes = document.getElementById("mes").value; // Corregido el id del campo mes
+      var anio = document.getElementById("año").value; // Corregido el id del campo año
+      var fecha = new Date(anio, mes - 1, dia); // Corregido el orden de los parámetros y ajustado mes - 1
+      if (isNaN(fecha)) {
+        alert("La fecha no es correcta");
+        return false;
+      }
+      alert("La fecha introducida es: " + fecha.toDateString()); // Modificado para mostrar la fecha de manera legible
+      return true;
+    }
+    function validaCheck() {
+      elemento = document.getElementById("checkboxValidacion");
+      if (!elemento.checked) {
+        alert("La casilla no ha sido validada");
+        return false;
+      }
+      return true;
+    }
+    function validacion(){
+      if(validaNombre()&&validaNumero()&&validaFecha()&&validaCheck()){
+        return true;
+      }else{
+        return false;
+        alert("Error");
+      }
+    }
+
+  </script>
+  <form action="formularioValidacion.html" method="post" name="formValidado" onsubmit="return validacion()">
+    Nombre: <input type="text" id="nombre"><br><br>
+    Teléfono: <input type="number" id="teléfono"><br><br>
+    Dia: <input type="number" id="dia"> Mes: <input type="number" id="mes"> Año: <input type="number" id="año"><br><br>
+
+    Validación <input name="validacion" type="checkbox" id="checkboxValidacion" value="Validacion" checked="checked">
+    <input type="submit" value="Validar">
+  </form>
+</body>
+</html>
