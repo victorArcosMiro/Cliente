@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var testNombreApellido = /^[^\d\s]+$/;
+    var testDni = /^\d{8}[a-zA-Z]$/;
+    var testTelefono = /^\d{9}/;
+    var testCorreo = /^[^\d\s]+[@]{1}[^\d\s]+[.]{1}[^\d\s]+/;
+
+    function validarNombre() {
+      var valor = document.getElementsByClassName("nombre")[0].value;
+      if (!testNombreApellido.test(valor)) {
+        alert("El nombre no puede contener caracteres numéricos.");
+        return false;
+      }
+      return true;
+    }
+
+    function validarApellido() {
+      var valor = document.getElementsByClassName("apellido")[0].value;
+      if (!testNombreApellido.test(valor)) {
+        alert("El apellido no puede contener caracteres numéricos.");
+        return false;
+      }
+      return true;
+    }
+
+    function validarTelefono() {
+      var telefono = document.getElementsByClassName("telefono")[0].value;
+      if (!testTelefono.test(telefono)) {
+        alert("El teléfono no puede contener letras.");
+        return false;
+      }
+      return true;
+    }
+
+    function validarCorreo(){
+      var correo = document.getElementsByClassName("correo")[0].value;
+      if (!testCorreo.test(correo)) {
+        alert("El correo no contiene el formato válido.");
+        return false;
+      }
+      return true;
+    }
+
+    function validarDni(){
+      var dni = document.getElementsByClassName("dni")[0].value;
+      if (!testDni.test(dni)) {
+        alert("El DNI debe contener 8 dígitos seguidos de una letra.");
+        return false;
+      }
+      return true;
+    }
+
+    function validacion() {
+  var esValido = true;
+
+  if (!validarNombre()) {
+    esValido = false;
+  }
+
+  if (!validarApellido()) {
+    esValido = false;
+  }
+
+  if (!validarTelefono()) {
+    esValido = false;
+  }
+
+  if (!validarCorreo()) {
+    esValido = false;
+  }
+
+  if (!validarDni()) {
+    esValido = false;
+  }
+
+  return esValido;
+}
+
+  </script>
+  <form id="userForm" action="OK.html" name="formValido" onsubmit="return validacion()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" class="nombre" required onblur="validarNombre()">
+    <br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" class="apellido" required onblur="validarApellido()">
+    <br>
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" class="telefono" required onblur="validarTelefono()">
+    <small>Ingrese un número de teléfono de 9 dígitos.</small>
+    <br>
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" class="correo" required onblur="validarCorreo()">
+    <br>
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" class="dni" required onblur="validarDni()">
+    <small>Ingrese un DNI válido (8 dígitos seguidos de una letra).</small>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>

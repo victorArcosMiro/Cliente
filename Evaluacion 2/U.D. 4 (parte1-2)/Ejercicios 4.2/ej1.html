@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Expresión regular para verificar que la variable no esté vacía y no contenga números
+    var testNombreApellido = /^[^\d\s]+$/;
+    var testDni = /^\d{8}[a-zA-Z]$/;
+    var testTelefono = /^\d{9}/;
+    var testCorreo = /^[^\d\s]+[@]{1}[^\d\s]+[.]{1}[^\d\s]+/;
+
+    var nombre = prompt("Introduce tu nombre:");
+    while (!testNombreApellido.test(nombre)) {
+      nombre = prompt("Introduce tu nombre:");
+    }
+
+    var apellido = prompt("Introduce tu apellido: ");
+    while (!testNombreApellido.test(apellido)) {
+      apellido = prompt("Introduce tu apellido:");
+    }
+
+    var dni = prompt("Introduce tu DNI: ");
+    while (!testDni.test(dni)) {
+      dni = prompt("Introduce tu DNI:");
+    }
+
+    var telefono = prompt("Introduce tu número de teléfono:");
+    while (!testTelefono.test(telefono)) {
+      telefono = prompt("Introduce tu número de teléfono:");
+    }
+
+    var correo = prompt("Introduce tu correo electrónico: ");
+    while (!testCorreo.test(correo)) {
+      correo = prompt("Introduce tu correo electrónico:");
+    }
+
+    document.write("<h3>Nombre: </h3>" + nombre);
+    document.write("<h3>Apellido: </h3>" + apellido);
+    document.write("<h3>DNI: </h3>" + dni);
+    document.write("<h3>Teléfono: </h3>" + telefono);
+    document.write("<h3>Correo Electrónico: </h3>" + correo);
+  </script>
+</body>
+</html>
