@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordenadas del Cursor</title>
+</head>
+<body>
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      var xNavegador = e.clientX;
+      var yNavegador = e.clientY;
+
+      var xMonitor = e.screenX;
+      var yMonitor = e.screenY;
+
+      var xAbsoluta = e.pageX;
+      var yAbsoluta = e.pageY;
+
+      // Coordenadas del navegador
+      document.getElementById('xNavegador').value = xNavegador;
+      document.getElementById('yNavegador').value = yNavegador;
+
+      // Coordenadas del monitor.
+      document.getElementById('xMonitor').value = xMonitor;
+      document.getElementById('yMonitor').value = yMonitor;
+
+      // Coordenadas absolutas.
+      document.getElementById('xAbsoluta').value = xAbsoluta;
+      document.getElementById('yAbsoluta').value = yAbsoluta;
+    });
+  </script>
+
+  <label for="xNavegador">Coordenadas X navegador</label>
+  <input type="text" id="xNavegador" readonly>
+
+  <label for="yNavegador">Coordenadas Y navegador</label>
+  <input type="text" id="yNavegador" readonly>
+  <br><br>
+
+  <label for="xMonitor">Coordenadas X monitor</label>
+  <input type="number" id="xMonitor" readonly>
+
+  <label for="yMonitor">Coordenadas Y monitor</label>
+  <input type="number" id="yMonitor" readonly>
+  <br><br>
+
+  <label for="xAbsoluta">Coordenadas X absoluta</label>
+  <input type="number" id="xAbsoluta" readonly>
+
+  <label for="yAbsoluta">Coordenadas Y absoluta</label>
+  <input type="number" id="yAbsoluta" readonly>
+</body>
+</html>

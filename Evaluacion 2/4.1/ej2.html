@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 6</title>
+<style>
+	body {margin:0px;}
+	.capa
+	{
+		float:left;
+		width:50%;
+	}
+	#roja {background-color:red;}
+	#verde {background-color:green;}
+	#amarilla {background-color:yellow;}
+	#azul {background-color:blue;}
+</style>
+
+<script type="text/javascript">
+function mostrarInformacion(){
+	alert ("Has pulsado en " + this.getAttribute("id"));
+}
+	function tamanoVentanaNavegador() {
+		var dimensiones = [];
+
+		if (typeof (window.innerWidth) == 'number') {
+			// No es IE
+			dimensiones = [ window.innerWidth, window.innerHeight ];
+		} else if (document.documentElement
+				&& (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+			//IE 6 en modo estandar (no quirks)
+			dimensiones = [ document.documentElement.clientWidth,
+					document.documentElement.clientHeight ];
+		} else if (document.body
+				&& (document.body.clientWidth || document.body.clientHeight)) {
+			//IE en modo quirks
+			dimensiones = [ document.body.clientWidth,
+					document.body.clientHeight ];
+		}
+
+		return dimensiones;
+	}
+
+
+	  var dimensiones = tamanoVentanaNavegador();
+	  var altura = dimensiones[1];
+	  var anchura = dimensiones[0];
+	 window.onload = function (){
+		 capas=document.getElementsByTagName("div");
+		 for (i=0; i<capas.length;i++){
+			 var alturapx = altura/2 + "px";
+			 var anchurapx = anchura/2 + "px"
+			/* capas[i].style.width= anchurapx;*/
+			 capas[i].style.height= alturapx;
+			capas[i].onclick=mostrarInformacion;
+		 }
+	 }
+
+
+</script>
+</head>
+
+<body>
+	<div id="roja" class="capa"></div>
+	<div id="verde" class="capa"></div>
+	<div id="amarilla" class="capa" ></div>
+	<div id="azul" class="capa" ></div>
+</body>
+</html>

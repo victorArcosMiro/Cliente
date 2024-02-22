@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="blue" text="white">
+
+<script>
+    function abrirVentana() {
+        // Abrir nueva ventana
+        var nuevaVentana = window.open('', '_blank', 'width=400,height=200');
+
+        // Función para actualizar hora y fecha cada segundo
+        function actualizarHoraFecha() {
+            var fechaActual = new Date();
+            var horaActual = fechaActual.getHours() + ':' + ('0' + fechaActual.getMinutes()).slice(-2) + ':' + ('0' + fechaActual.getSeconds()).slice(-2);
+            var fecha = ('0' + fechaActual.getDate()).slice(-2) + '/' + ('0' + (fechaActual.getMonth() + 1)).slice(-2) + '/' + fechaActual.getFullYear();
+
+            // Actualizar color de fondo y contenido de la ventana secundaria
+            nuevaVentana.document.bgColor = 'yellow';
+            nuevaVentana.document.fgColor = 'green';
+            nuevaVentana.document.body.textContent = 'HORA ACTUAL: \n' + horaActual + "\n" + 'FECHA ACTUAL \n' + fecha;
+        }
+
+        // Actualizar cada segundo
+        setInterval(actualizarHoraFecha, 1000);
+
+        // Llamar a la función por primera vez para mostrar la hora inicial
+        actualizarHoraFecha();
+    }
+</script>
+
+<script>
+  abrirVentana();
+</script>
+
+</body>
+</html>
