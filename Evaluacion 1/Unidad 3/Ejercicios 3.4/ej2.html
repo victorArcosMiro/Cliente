@@ -7,15 +7,14 @@
 </head>
 <body>
   <script>
- // Defino el conjunto de letras correspondientes a los números de DNI en mayúsculas y minúsculas.
- const letrasArray = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
-    const letrasArrayMinusculas = ["t", "r", "w", "a", "g", "m", "y", "f", "p", "d", "x", "b", "n", "j", "z", "s", "q", "v", "h", "l", "c", "k", "e"];
-    //Funcion que comprueba si el dni es correcto
-    function comprobarDni(dni){
+    // Defino el conjunto de letras correspondientes a los números de DNI.
+    const letrasArray = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "E", "K", "T"];
 
-      // Convierto la cadena 'dni' en un array de caracteres, elimino el último elemento y vuelvo a convertirlo en una cadena.
-      var numerosArray = Array.from(dni).slice(0, -1);
-      var numeros = numerosArray.join('');
+    // Solicito al usuario que ingrese su número de DNI para almacenarlo en la variable 'dni'.
+    var dni = prompt("Introduce tu DNI");
+
+    // Extraigo los números del DNI eliminando la última letra y los almaceno en la variable 'numeros'.
+    var numeros = dni.slice(0, -1);
 
       // Convierto la variable 'numeros' a un número entero utilizando 'parseInt' y lo almaceno en 'dniInt'.
       var dniInt = parseInt(numeros);

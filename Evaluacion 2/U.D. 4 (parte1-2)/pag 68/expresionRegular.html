@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        #mensaje {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Validación</h2>
+    <form id="formulario" onsubmit="return validarFormulario()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono">
+
+        <input type="submit" value="Enviar">
+        <div id="mensaje"></div>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var email = document.getElementById("email").value;
+            var dni = document.getElementById("dni").value;
+            var telefono = document.getElementById("telefono").value;
+
+            var expRegEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var expRegDNI = /^\d{8}[a-zA-Z]$/;
+            var expRegTelefono = /^\d{9}$/;
+
+            var mensajeError = "";
+
+            if (!expRegEmail.test(email)) {
+                mensajeError += "Correo electrónico no válido.<br>";
+            }
+
+            if (!expRegDNI.test(dni)) {
+                mensajeError += "DNI no válido.<br>";
+            }
+
+            if (!expRegTelefono.test(telefono)) {
+                mensajeError += "Teléfono no válido.<br>";
+            }
+
+            var mensajeDiv = document.getElementById("mensaje");
+            if (mensajeError !== "") {
+                mensajeDiv.innerHTML = "<strong>Error:</strong><br>" + mensajeError;
+                return false;
+            } else {
+                mensajeDiv.innerHTML = "";
+                alert("Formulario válido. Se puede enviar.");
+                // Puedes enviar el formulario o realizar otras acciones aquí si es válido.
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

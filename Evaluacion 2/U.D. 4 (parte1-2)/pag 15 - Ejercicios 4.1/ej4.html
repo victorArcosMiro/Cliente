@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+    <script type="text/javascript">
+        function limita(elEvento, maximoCaracteres) {
+            var elemento = document.getElementById("texto");
+            // Obtener la tecla pulsada
+            var evento = elEvento || window.event;
+            var codigoCaracter = evento.which || evento.keyCode;
+
+            // Verificar la longitud actual del contenido en el elemento
+            if (elemento.value.length >= maximoCaracteres) {
+                // Si ya se alcanzó el límite, impedir la entrada de más caracteres
+                return false;
+            } else {
+                // Permitir la entrada de caracteres si no se alcanzó el límite
+                return true;
+            }
+        }
+
+        function actualizaInfo(maximoCaracteres) {
+            var elemento = document.getElementById("texto");
+            var info = document.getElementById("info");
+
+            // Actualizar la información en el elemento con id "info"
+            if (elemento.value.length >= maximoCaracteres) {
+                info.innerHTML = "Máximo " + maximoCaracteres + " caracteres";
+            } else {
+                info.innerHTML = "Puedes escribir hasta " + (maximoCaracteres - elemento.value.length) + " caracteres adicionales";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="info">Máximo 100 caracteres</div>
+    <!-- Utilizar oninput en lugar de onkeypress para abordar otros métodos de entrada -->
+    <textarea id="texto" oninput="return limita(event, 100);" onkeyup="actualizaInfo(100)" rows="6" cols="30"></textarea>
+</body>
+</html>

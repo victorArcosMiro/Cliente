@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function validaNombre() {
+      valor = document.getElementById("nombre").value;
+      if (valor == null || valor.length == 0 || !isNaN(valor)) {
+        alert("El campo no puede ser vacío y no puede ser un número");
+        return false;
+      }
+      return true;
+    }
+
+    function validaNumero() {
+      valor = document.getElementById("telefono").value;
+      if (isNaN(valor)) {
+        alert("El campo tiene que ser numérico");
+        return false;
+      }
+      return true;
+    }
+
+    function validaFecha() {
+      var dia = document.getElementById("dia").value;
+      var mes = document.getElementById("mes").value;
+      var anio = document.getElementById("año").value;
+      var fecha = new Date(anio, mes - 1, dia);
+      if (isNaN(fecha.getTime())) {
+        alert("La fecha no es correcta");
+        return false;
+      }
+      alert("La fecha introducida es: " + fecha.toDateString());
+      return true;
+    }
+
+    function validaCheck() {
+      elemento = document.getElementById("checkboxValidacion");
+      if (!elemento.checked) {
+        alert("La casilla no ha sido validada");
+        return false;
+      }
+      return true;
+    }
+
+    function validacion() {
+      if (validaNombre() && validaNumero() && validaFecha() && validaCheck()) {
+        alert("Los datos son correctos!!");
+        return true;
+      } else {
+        alert("Error");
+        return false;
+      }
+    }
+
+  </script>
+
+  <form action="OK.html" method="get" name="formValidado" onsubmit="return validacion()">
+    Nombre: <input type="text" id="nombre" onchange="return validaNombre()"><br><br>
+    Teléfono: <input type="number" id="telefono" onchange="return validaNumero()"><br><br>
+    Día: <input type="number" id="dia"> Mes: <input type="number" id="mes"> Año: <input type="number" id="año" onchange="validaFecha()"><br><br>
+
+    Validación <input name="validacion" type="checkbox" id="checkboxValidacion" value="Validacion" checked="checked">
+    <input type="submit" value="Validar">
+  </form>
+</body>
+</html>

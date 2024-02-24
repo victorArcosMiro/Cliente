@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*Obtener el evento que se ha realizado, el KeyCode de la tecla pulsada, el charCode, y el caracter en concreto que se ha pulsado*/
+
+    /*Detectar letras alt control y shift*/
+    window.onload = function () {
+      document.onkeyup = muestraInformacion;
+      document.onkeypress = muestraInformacion;
+      document.onkeydown = muestraInformacion;
+    }
+
+
+
+    function muestraInformacion(elEvento) {
+      var evento = window.event || elEvento;
+
+      var mensaje = "Tipo de evento: " + evento.type + "<br>" +
+        "Propiedad keyCode: " + evento.keyCode + "<br>" +
+        "Propiedad charCode: " + evento.charCode +
+        "<p style=color:red;>Carácter pulsado: " + String.fromCharCode(evento.charCode) + "</p>";
+
+      info.innerHTML += "<br>--------------------------------------<br>" + mensaje
+
+      if (evento.altKey) {
+        alert('Estaba pulsada la tecla ALT');
+      }
+      if (evento.shiftKey) {
+        alert('Estaba pulsada la tecla SHIFT');
+      }
+      if (evento.ctrlKey) {
+        alert('Estaba pulsada la tecla CONTROL');
+      }
+    }
+
+  </script>
+  <div id="info"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function maximoLetras(evento,elemento, nLetras){
+      var longitud = elemento.value.lenght < nLetras;
+    }
+  </script>
+  <label for="content">Máximo 100 carácteres</label>
+  <br>
+  <textarea name="content" id="content" cols="30" rows="10" onkeypress="return maximoLetras(evento,this, 100)">
+
+  </textarea>
+</body>
+</html>
