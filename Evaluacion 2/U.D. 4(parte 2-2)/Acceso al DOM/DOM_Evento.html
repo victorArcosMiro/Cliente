@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    function ratonEncima(){
+      document.getElementsByTagName('div')[0].childNodes[0].nodeValue = "El raton esta ENCIMA.";
+    }
+    function ratonFuera(){
+      document.getElementsByTagName('div')[0].childNodes[0].nodeValue = "El raton esta FUERA.";
+    }
+  </script>
+</head>
+<body>
+  <div onmouseover="ratonEncima()" onmouseout="ratonFuera()">VALOR POR DEFECTO.</div>
+</body>
+</html>

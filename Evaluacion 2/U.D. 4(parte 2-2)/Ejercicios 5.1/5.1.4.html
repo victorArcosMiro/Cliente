@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio JavaScript DOM con addEventListener</title>
+</head>
+<body>
+
+<a href="#" id="id_enlace" title="Enlace de Pulsa aquí">Pulsa aquí</a>
+
+<script>
+    // Obtener el elemento <a> directamente
+    var enlace = document.querySelector("a");
+
+    // Agregar un manejador de eventos al enlace
+    enlace.addEventListener("click", function() {
+        // Verificar si el enlace tiene un segundo atributo
+        if (enlace.attributes.length > 1) {
+            // Obtener el segundo atributo y su valor
+            var segundoAtributo = enlace.attributes[1].nodeName;
+            var valorSegundoAtributo = enlace.attributes[1].nodeValue;
+
+            // Mostrar la información en dos ventanas de alerta
+            alert("Segundo atributo del enlace: " + segundoAtributo);
+            alert("Valor del segundo atributo: " + valorSegundoAtributo);
+        } else {
+            alert("El enlace no tiene un segundo atributo.");
+        }
+    });
+</script>
+
+</body>
+</html>
