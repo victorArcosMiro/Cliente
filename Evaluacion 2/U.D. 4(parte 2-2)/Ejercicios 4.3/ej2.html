@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Clicks</title>
+</head>
+<body>
+
+<button id="botonClick">Haz clic</button>
+<p id="sesion">Número de clics en la sesión: 0</p>
+<p id="total">Número total de clics: 0</p>
+
+<script>
+// CODIGO COMPLETO
+// Función para obtener el valor de una cookie por su nombre
+function obtenerCookie(nombre) {
+    const nombreCookie = nombre + "=";
+    const cookieDecodificada = decodeURIComponent(document.cookie);
+    const arrayCookies = cookieDecodificada.split(';');
+
+    for (let i = 0; i < arrayCookies.length; i++) {
+        let cookie = arrayCookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(nombreCookie) === 0) {
+            return cookie.substring(nombreCookie.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+// Función para establecer una cookie con un valor y una duración en días
+function establecerCookie(nombre, valor, dias) {
+    const fechaExpiracion = new Date();
+    fechaExpiracion.setTime(fechaExpiracion.getTime() + (dias * 24 * 60 * 60 * 1000));
+    const expira = "expires=" + fechaExpiracion.toUTCString();
+    document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+}
+
+// Función principal para contar los clics
+function contarClics() {
+    let clicsSesion = 0;
+    let clicsTotal = obtenerCookie("clicsTotal");
+
+    if (clicsTotal === null) {
+        clicsTotal = 0;
+    } else {
+        clicsTotal = parseInt(clicsTotal);
+    }
+
+    document.getElementById("sesion").innerText = "Número de clics en la sesión: " + clicsSesion;
+    document.getElementById("total").innerText = "Número total de clics: " + clicsTotal;
+
+    document.getElementById("botonClick").addEventListener("click", function () {
+        clicsSesion++;
+        clicsTotal++;
+
+        document.getElementById("sesion").innerText = "Número de clics en la sesión: " + clicsSesion;
+        document.getElementById("total").innerText = "Número total de clics: " + clicsTotal;
+
+        establecerCookie("clicsTotal", clicsTotal, 365); // Cookie válida por 365 días
+    });
+}
+
+// Llama a la función principal al cargar la página
+contarClics();
+</script>
+
+</body>
+</html>

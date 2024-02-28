@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>El DOM</h1>
+  <h2>Curso de JavaScript</h2>
+
+  <p class="parrafos" id="parrafo1">Párrafo 1</p>
+  <p class="parrafos" id="parrafo2">Párrafo 2</p>
+  <p class="parrafos" id="parrafo3">Párrafo 3</p>
+
+<script>
+  //Seleccionar elementos mediante:
+
+  //ID
+  let elementoPorId = document.getElementById('parrafo1');//Recuperamos el elemento que tiene de id ->"parrafo1"
+  elementoPorId.innerHTML = "HTML";//Modificamos el contenido de dicho elemento.
+
+  //CLASE
+  let elementoPorClase = document.getElementsByClassName("parrafos");//Recuperamos en forma de array todos los elemento con nombre de clase "parrafos"
+
+  elementoPorClase[1].innerHTML = "CSS"; //Seleccionamos la segunda posicion del array y con innerHTML modificamos el contenido.
+
+
+  //ETIQUETA
+  let elementosPorEtiqueta = document.getElementsByTagName('p');//Tambien devuelve un array con los elementos que tienen etiqueta <p>
+  //Seleccionamos la ultima posicion del array
+  elementosPorEtiqueta[2].innerHTML = "JavaScript";
+
+</script>
+</body>
+</html>

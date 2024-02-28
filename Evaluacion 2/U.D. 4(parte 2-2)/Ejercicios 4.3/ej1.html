@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+ // CODIGO COMPLETO
+// Función para obtener el valor de una cookie por su nombre
+function obtenerCookie(nombre) {
+    const nombreCookie = nombre + "=";
+    const cookieDecodificada = decodeURIComponent(document.cookie);
+    const arrayCookies = cookieDecodificada.split(';');
+
+    for (let i = 0; i < arrayCookies.length; i++) {
+        let cookie = arrayCookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(nombreCookie) === 0) {
+            return cookie.substring(nombreCookie.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+// Función para establecer una cookie con un valor y una duración en días
+function establecerCookie(nombre, valor, dias) {
+    const fechaExpiracion = new Date();
+    fechaExpiracion.setTime(fechaExpiracion.getTime() + (dias * 24 * 60 * 60 * 1000));
+    const expira = "expires=" + fechaExpiracion.toUTCString();
+    document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+}
+
+// Función principal para contar las visitas en los últimos 3 días
+function contarVisitasUltimos3Dias() {
+    const hoy = new Date();
+    const ultimos3Dias = new Date(hoy);
+    ultimos3Dias.setDate(hoy.getDate() - 3);
+
+    let visitas = obtenerCookie("visitasUltimos3Dias");
+
+    if (visitas === null) {
+        visitas = 1;
+    } else {
+        visitas = parseInt(visitas) + 1;
+    }
+
+    establecerCookie("visitasUltimos3Dias", visitas, 3); // Cookie válida por 3 días
+
+    document.write("Número de visitas en los últimos 3 días: " + visitas);
+}
+
+// Llama a la función principal al cargar la página
+contarVisitasUltimos3Dias();
+
+
+    </script>
+</body>
+</html>
